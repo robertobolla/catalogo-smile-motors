@@ -72,16 +72,21 @@ main{display:block}
 .cov-tag{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--f-head);font-weight:700;
   font-size:clamp(15px,2.4vw,30px);letter-spacing:.04em;text-transform:uppercase}
 .cov-tag i{width:9px;height:9px;background:var(--yellow);transform:rotate(45deg)}
-.cov-vehicles{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:380px;width:100%;max-width:600px;margin-left:auto;padding-bottom:15px}
-.cov-halo{position:absolute;width:100%;aspect-ratio:1.4/1;border-radius:50%;left:50%;bottom:15px;transform:translateX(-50%);
-  background:radial-gradient(ellipse,rgba(245,196,0,.25),rgba(245,196,0,.06) 48%,transparent 70%);filter:blur(12px);z-index:0}
-.cov-vehicles img{position:absolute;width:55%;max-width:280px;object-fit:contain;filter:drop-shadow(0 15px 20px rgba(0,0,0,.65));transition:transform .35s cubic-bezier(0.25, 0.8, 0.25, 1), filter .3s, z-index .3s}
-.cov-vehicles .v-main{position:relative;z-index:3;width:64%;max-width:320px;filter:drop-shadow(0 22px 28px rgba(0,0,0,.7))}
-.cov-vehicles .v-left{left:50%;bottom:15px;transform:translate(-118%, 0) scale(0.9);z-index:2;filter:brightness(.9) drop-shadow(-8px 12px 18px rgba(0,0,0,.55))}
-.cov-vehicles .v-right{left:50%;bottom:15px;transform:translate(18%, 0) scale(0.85);z-index:1;filter:brightness(.88) drop-shadow(8px 12px 18px rgba(0,0,0,.55))}
-.cov-vehicles:hover .v-main{transform:translateY(-8px) scale(1.02);filter:drop-shadow(0 26px 32px rgba(0,0,0,.75))}
-.cov-vehicles:hover .v-left{transform:translate(-124%, -8px) scale(0.92) rotate(-1deg);filter:brightness(.95) drop-shadow(-12px 16px 22px rgba(0,0,0,.6))}
-.cov-vehicles:hover .v-right{transform:translate(24%, -8px) scale(0.87) rotate(1deg);filter:brightness(.93) drop-shadow(12px 16px 22px rgba(0,0,0,.6))}
+.cov-vehicles{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:15px;min-height:380px;width:100%;max-width:720px;margin-left:auto;padding-bottom:15px}
+.cov-vehicles::after{content:"";position:absolute;left:8%;right:8%;bottom:10px;height:12px;background:rgba(0,0,0,.75);filter:blur(6px);border-radius:50%;z-index:1}
+.cov-halo{position:absolute;width:92%;aspect-ratio:2/1;border-radius:50%;left:50%;bottom:10px;transform:translateX(-50%);
+  background:radial-gradient(ellipse at 50% 100%,rgba(245,196,0,.28),rgba(245,196,0,.08) 40%,transparent 65%),
+             radial-gradient(circle at 50% 50%,rgba(255,255,255,.12),transparent 50%);filter:blur(14px);z-index:0}
+.cov-vehicles img{position:relative;width:30%;max-width:240px;object-fit:contain;
+  filter:drop-shadow(0 8px 12px rgba(0,0,0,.4)) contrast(1.03) brightness(1.02);
+  transition:transform .35s cubic-bezier(0.25, 0.8, 0.25, 1), filter .3s, z-index .3s;z-index:2}
+.cov-vehicles .v-main{width:36%;max-width:280px;z-index:3;transform:scale(1.1);margin-bottom:12px;
+  filter:drop-shadow(0 12px 18px rgba(0,0,0,.55)) contrast(1.03) brightness(1.02)}
+.cov-vehicles .v-left{transform:scale(0.96) rotate(-1deg)}
+.cov-vehicles .v-right{transform:scale(0.96) rotate(1deg)}
+.cov-vehicles:hover .v-main{transform:scale(1.15) translateY(-8px);filter:drop-shadow(0 20px 28px rgba(0,0,0,.6)) contrast(1.05) brightness(1.04);z-index:4}
+.cov-vehicles:hover .v-left{transform:scale(1.02) translateY(-4px) rotate(-2deg);filter:contrast(1.05) brightness(1.04);z-index:3}
+.cov-vehicles:hover .v-right{transform:scale(1.02) translateY(-4px) rotate(2deg);filter:contrast(1.05) brightness(1.04);z-index:3}
 .cov-index{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ix{display:flex;align-items:center;gap:14px;text-align:left;padding:16px 18px;border-radius:14px;
   background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);transition:.18s}
@@ -250,11 +255,15 @@ main{display:block}
   .nav-sec{display:none}
   .cov-grid{grid-template-columns:1fr;gap:8px;text-align:center}
   .cov-copy{order:1}
-  .cov-vehicles{order:2;min-height:280px;margin-top:20px;padding-bottom:10px}
-  .cov-vehicles .v-left{bottom:10px;transform:translate(-112%, 0) scale(0.82)}
-  .cov-vehicles .v-right{bottom:10px;transform:translate(12%, 0) scale(0.78)}
-  .cov-vehicles:hover .v-left{transform:translate(-118%, -4px) scale(0.84) rotate(-1deg)}
-  .cov-vehicles:hover .v-right{transform:translate(18%, -4px) scale(0.80) rotate(1deg)}
+  .cov-vehicles{order:2;min-height:260px;margin-top:20px;padding-bottom:10px;max-width:560px;gap:10px}
+  .cov-vehicles::after{left:4%;right:4%;bottom:6px;height:8px}
+  .cov-vehicles img{position:relative;width:30%;max-width:170px}
+  .cov-vehicles .v-main{width:36%;max-width:200px;transform:scale(1.1);margin-bottom:5px}
+  .cov-vehicles .v-left{transform:scale(0.95)}
+  .cov-vehicles .v-right{transform:scale(0.95)}
+  .cov-vehicles:hover .v-main{transform:scale(1.15) translateY(-4px)}
+  .cov-vehicles:hover .v-left{transform:scale(1.0) translateY(-2px)}
+  .cov-vehicles:hover .v-right{transform:scale(1.0) translateY(-2px)}
   .cov-bar{margin-left:auto;margin-right:auto}
   .cov-tag{justify-content:center}
   .cov-index{grid-template-columns:1fr}
@@ -282,10 +291,8 @@ main{display:block}
 @media (max-width:480px){
   .panel{padding:calc(var(--h) + 18px) 14px 88px}
   .pr-title{font-size:30px}
-  .cov-vehicles{min-height:210px}
-  .cov-vehicles img{max-width:240px}
-  .cov-vehicles .v-main{max-width:265px}
-  .cov-vehicles .v-left{bottom:10px;transform:translate(-108%, 0) scale(0.74)}
-  .cov-vehicles .v-right{bottom:10px;transform:translate(8%, 0) scale(0.7)}
+  .cov-vehicles{min-height:180px;max-width:340px;gap:6px;margin-left:auto;margin-right:auto}
+  .cov-vehicles img{max-width:100px}
+  .cov-vehicles .v-main{max-width:120px}
 }
 @media (prefers-reduced-motion:reduce){.wa-float{animation:none}html{scroll-behavior:auto}}
