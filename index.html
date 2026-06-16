@@ -1,87 +1,60 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Smile Motors — Catálogo 2026</title>
-<meta name="description" content="Catálogo 2026 Smile Motors · Motos eléctricas, triciclos y combustión/híbridos.">
+<title>Smile Motors ÔÇö Cat├ílogo 2026</title>
+<meta name="description" content="Cat├ílogo 2026 Smile Motors ┬À Motos el├®ctricas, triciclos y combusti├│n/h├¡bridos.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=1.5">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header class="nav">
   <a class="brand" href="#inicio" data-go="inicio">
     <svg viewBox="0 0 100 100" fill="none"><path d="M50 5 L93 50 L50 95 L7 50 Z" stroke="currentColor" stroke-width="5"/><path d="M67 35 C62 27 42 26 40 38 C38 50 64 46 62 60 C60 71 40 70 34 62" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
-    <span class="bt">SMILE MOTORS<small>CATÁLOGO 2026</small></span>
+    <span class="bt">SMILE MOTORS<small>CAT├üLOGO 2026</small></span>
   </a>
-  <nav class="nav-links"><button class="nl" data-go="inicio">Inicio</button><button class="nl" data-go="ofertas">Ofertas</button><button class="nl" data-go="sec-01">Motos Eléctricas</button><button class="nl" data-go="sec-02">Triciclos Eléctricos</button><button class="nl" data-go="sec-03">Combustión e Híbridos</button></nav>
+  <nav class="nav-links"><button class="nl" data-go="inicio">Inicio</button><button class="nl" data-go="ofertas">Ofertas</button><button class="nl" data-go="sec-01">Motos El├®ctricas</button><button class="nl" data-go="sec-02">Triciclos El├®ctricos</button><button class="nl" data-go="sec-03">Combusti├│n e H├¡bridos</button></nav>
   <div class="nav-sec" id="navSec">Inicio</div>
-  <button class="burger" id="burger" aria-label="Menú"><i></i><i></i><i></i></button>
+  <button class="burger" id="burger" aria-label="Men├║"><i></i><i></i><i></i></button>
 </header>
-<div class="menu" id="menu"><button class="mm" data-go="inicio">Inicio</button><button class="mm" data-go="ofertas"><b>★</b><span>Ofertas Destacadas</span></button><button class="mm" data-go="sec-01"><b>01</b><span>Motos Eléctricas</span></button><button class="mm" data-go="sec-02"><b>02</b><span>Triciclos Eléctricos</span></button><button class="mm" data-go="sec-03"><b>03</b><span>Combustión e Híbridos</span></button></div>
+<div class="menu" id="menu"><button class="mm" data-go="inicio">Inicio</button><button class="mm" data-go="ofertas"><b>Ôÿà</b><span>Ofertas Destacadas</span></button><button class="mm" data-go="sec-01"><b>01</b><span>Motos El├®ctricas</span></button><button class="mm" data-go="sec-02"><b>02</b><span>Triciclos El├®ctricos</span></button><button class="mm" data-go="sec-03"><b>03</b><span>Combusti├│n e H├¡bridos</span></button></div>
 
 <main>
-  <h1 class="sr-only">Smile Motors — Catálogo 2026</h1>
+  <h1 class="sr-only">Smile Motors ÔÇö Cat├ílogo 2026</h1>
   <section class="panel cover" id="inicio" data-screen-label="Portada">
-    <!-- z-index 0: Fondo con grilla y glow -->
-    <div class="cov-bg" aria-hidden="true"></div>
-    <!-- z-index 1: Humo animado bajo -->
-    <div class="cov-smoke" aria-hidden="true">
-      <div class="smoke-layer s1"></div>
-      <div class="smoke-layer s2"></div>
-    </div>
-    <!-- z-index 2: Bloque de título izquierdo -->
-    <div class="cov-copy">
-      <div class="cov-modelos">MODELOS</div>
-      <div class="cov-year">2026</div>
-      <div class="cov-tag">
-        <span>POTENCIA</span><i></i><span>INNOVACIÓN</span><i></i><span>MOVILIDAD</span>
+    <div class="cov-wm" aria-hidden="true">2026</div>
+    <div class="cov-inner">
+      <div class="cov-grid">
+        <div class="cov-copy">
+          <div class="cov-modelos">MODELOS</div>
+          <div class="cov-year">2026</div>
+          <div class="cov-bar"></div>
+          <div class="cov-tag"><b>POTENCIA</b><i></i><b>INNOVACI├ôN</b><i></i><b>MOVILIDAD</b></div>
+        </div>
+        <div class="cov-vehicles">
+          <div class="cov-halo"></div>
+          <img width="760" height="468" loading="eager" decoding="async" src="assets/img/p16_xmt250.png" alt="Moto Caf├® Racer XMT250" class="v-left">
+          <img width="760" height="772" loading="eager" decoding="async" src="assets/img/div01_newpro.png" alt="Scooter el├®ctrico New Pro" class="v-main">
+          <img width="760" height="564" loading="eager" decoding="async" src="assets/img/p09_treck250.png" alt="Triciclo de carga Treck 250" class="v-right">
+        </div>
       </div>
-    </div>
-    <!-- z-index 3: Moto protagonista (UNA SOLA) -->
-    <div class="cov-vehicle-container">
-      <div class="cov-hero-halo"></div>
-      <img width="760" height="772" loading="eager" decoding="async"
-           src="assets/img/div01_newpro.png"
-           alt="Scooter eléctrico New Pro 2026"
-           class="cov-hero-img">
-      <div class="cov-hero-shadow"></div>
-    </div>
-    <!-- z-index 4: Columna derecha de categorías -->
-    <div class="cov-categories">
-      <div class="cov-cat-line" aria-hidden="true">
-        <div class="cov-cat-node n1"></div>
-        <div class="cov-cat-node n2"></div>
-        <div class="cov-cat-node n3"></div>
+      <div class="cov-index">
+        <button class="ix" data-go="sec-01"><span class="n">01</span><span class="l">Motos<br>El├®ctricas</span></button>
+        <button class="ix" data-go="sec-02"><span class="n">02</span><span class="l">Triciclos<br>El├®ctricos</span></button>
+        <button class="ix" data-go="sec-03"><span class="n">03</span><span class="l">Combusti├│n<br>e H├¡bridos</span></button>
       </div>
-      <div class="cov-cat-list">
-        <button class="cov-cat-item" data-go="sec-01">
-          <span class="cov-cat-num">01</span>
-          <span class="cov-cat-label">MOTOS<br>ELÉCTRICAS</span>
-        </button>
-        <button class="cov-cat-item" data-go="sec-02">
-          <span class="cov-cat-num">02</span>
-          <span class="cov-cat-label">TRICICLOS<br>ELÉCTRICOS</span>
-        </button>
-        <button class="cov-cat-item" data-go="sec-03">
-          <span class="cov-cat-num">03</span>
-          <span class="cov-cat-label">COMBUSTIÓN<br>/ HÍBRIDOS</span>
-        </button>
-      </div>
-    </div>
-    <!-- z-index 4: Pie inferior centrado -->
-    <div class="cov-foot">
-      <span class="hz"></span>CATÁLOGO <b>2026</b><span class="hz"></span>
+      <div class="cov-foot"><span class="hz"></span>CAT├üLOGO <b>2026</b><span class="hz"></span></div>
     </div>
   </section>
 
   <section class="panel offers" id="ofertas" data-screen-label="Ofertas Destacadas">
     <div class="of-inner">
       <header class="of-head">
-        <div class="of-eyebrow"><span class="of-line"></span>SMILE MOTORS · 2026<span class="of-line"></span></div>
+        <div class="of-eyebrow"><span class="of-line"></span>SMILE MOTORS ┬À 2026<span class="of-line"></span></div>
         <h2 class="of-title">OFERTAS <span>DESTACADAS</span></h2>
         <p class="of-sub">Promociones exclusivas disponibles por tiempo limitado.</p>
       </header>
@@ -91,12 +64,11 @@
           <div class="of-media">
             <div class="of-halo"></div>
             <span class="of-solar"><svg viewBox="0 0 48 34" fill="none" aria-hidden="true"><g stroke="#f5c400" stroke-width="1.2" opacity=".9"><path d="M6 4 H46 L42 26 H2 Z"/><path d="M17 4 L13 26 M28 4 L25 26 M39 4 L36 26 M4.5 12 H44.5 M3 19.5 H43"/></g><path d="M24 26 V32 M18 32 H30" stroke="#f5c400" stroke-width="1.4"/></svg><span>PANEL SOLAR</span></span>
-            <img class="of-second" width="760" height="573" loading="eager" decoding="async" src="assets/img/p11_dchybrid.png" alt="Triciclo híbrido de carga">
-            <span class="of-plus">+</span>
-            <img class="of-main" width="760" height="786" loading="eager" decoding="async" src="assets/img/p03_tank_new.png" alt="Tank Eléctrica 72V">
+            <img class="of-second" width="760" height="573" loading="eager" decoding="async" src="assets/img/p11_dchybrid.png" alt="Triciclo h├¡brido de carga">
+            <img class="of-main" width="760" height="786" loading="eager" decoding="async" src="assets/img/p03_tank_new.png" alt="Tank El├®ctrica 72V">
           </div>
           <div class="of-body">
-            <h3 class="of-name">Tank Eléctrica <span class="y">72V</span><span class="of-plus-name">+ Triciclo Híbrido</span></h3>
+            <h3 class="of-name">Tank El├®ctrica <span class="y">72V</span></h3>
             <div class="of-chips"><span>3000W</span><span>72V 55Ah</span><span>Carga 200 kg</span></div>
             <div class="of-price">
               <span class="of-from">DESDE</span>
@@ -104,8 +76,9 @@
             </div>
             <div class="of-includes">
               <div class="inc-h">INCLUYE</div>
-              <ul class="inc-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Moto eléctrica Tank 72V</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Triciclo híbrido de carga</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Panel solar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Garantía y respaldo</span></li></ul>
+              <ul class="inc-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Moto el├®ctrica Tank 72V</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Triciclo h├¡brido de carga</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Panel solar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Garant├¡a y respaldo</span></li></ul>
             </div>
+            <a class="btn-wa primary" data-wa="Hola Smile Motors. Quiero consultar disponibilidad del PACK Tank El├®ctrica 72V (desde USD 5.600)." href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Consultar disponibilidad</a>
           </div>
         </article>
         <article class="of-card">
@@ -113,12 +86,11 @@
           <div class="of-media">
             <div class="of-halo"></div>
             <span class="of-solar"><svg viewBox="0 0 48 34" fill="none" aria-hidden="true"><g stroke="#f5c400" stroke-width="1.2" opacity=".9"><path d="M6 4 H46 L42 26 H2 Z"/><path d="M17 4 L13 26 M28 4 L25 26 M39 4 L36 26 M4.5 12 H44.5 M3 19.5 H43"/></g><path d="M24 26 V32 M18 32 H30" stroke="#f5c400" stroke-width="1.4"/></svg><span>PANEL SOLAR</span></span>
-            <img class="of-second" width="760" height="573" loading="eager" decoding="async" src="assets/img/p11_dchybrid.png" alt="Triciclo híbrido de carga">
-            <span class="of-plus">+</span>
+            <img class="of-second" width="760" height="573" loading="eager" decoding="async" src="assets/img/p11_dchybrid.png" alt="Triciclo h├¡brido de carga">
             <img class="of-main" width="760" height="475" loading="eager" decoding="async" src="assets/img/p20_gn125f_black.png" alt="Suzuki GN125 Japonesa">
           </div>
           <div class="of-body">
-            <h3 class="of-name">Suzuki GN125 <span class="y">Japonesa</span><span class="of-plus-name">+ Triciclo Híbrido</span></h3>
+            <h3 class="of-name">Suzuki GN125 <span class="y">Japonesa</span></h3>
             <div class="of-chips"><span>Japonesa</span><span>Bajo consumo</span><span>4 Tiempos</span></div>
             <div class="of-price">
               <span class="of-from">DESDE</span>
@@ -126,33 +98,34 @@
             </div>
             <div class="of-includes">
               <div class="inc-h">INCLUYE</div>
-              <ul class="inc-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Moto Suzuki GN125</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Triciclo híbrido de carga</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Panel solar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Garantía y respaldo</span></li></ul>
+              <ul class="inc-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Moto Suzuki GN125</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Triciclo h├¡brido de carga</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Panel solar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13 l4 4 L19 7"/></svg><span>Garant├¡a y respaldo</span></li></ul>
             </div>
+            <a class="btn-wa primary" data-wa="Hola Smile Motors. Quiero consultar disponibilidad del PACK Suzuki GN125 Japonesa (desde USD 5.900)." href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Consultar disponibilidad</a>
           </div>
         </article>
       </div>
     </div>
   </section>
-  <section class="panel divider" id="sec-01" data-screen-label="Sección 01">
+  <section class="panel divider" id="sec-01" data-screen-label="Secci├│n 01">
     <div class="dv-inner">
       <div class="dv-text">
         <div class="dv-num" aria-hidden="true">01</div>
         <div class="dv-bar"></div>
-        <h2 class="dv-title">MOTOS<span>ELÉCTRICAS</span></h2>
-        <div class="dv-sec">SECCIÓN <b>01</b></div>
+        <h2 class="dv-title">MOTOS<span>EL├ëCTRICAS</span></h2>
+        <div class="dv-sec">SECCI├ôN <b>01</b></div>
       </div>
-      <div class="dv-veh"><div class="dv-halo"></div><img width="760" height="772" loading="lazy" decoding="async" src="assets/img/div01_newpro.png" alt="Motos Eléctricas"></div>
+      <div class="dv-veh"><div class="dv-halo"></div><img width="760" height="772" loading="lazy" decoding="async" src="assets/img/div01_newpro.png" alt="Motos El├®ctricas"></div>
     </div>
   </section>
-  <section class="panel product" id="prod-1" data-screen-label="MODELO TANK ELÉCTRICA 72V 55AH">
+  <section class="panel product" id="prod-1" data-screen-label="MODELO TANK EL├ëCTRICA 72V 55AH">
     <div class="pr-inner">
-      <div class="pr-media"><div class="pr-halo"></div><img width="760" height="786" loading="lazy" decoding="async" src="assets/img/p03_tank_new.png" alt="MODELO TANK ELÉCTRICA 72V 55AH"></div>
+      <div class="pr-media"><div class="pr-halo"></div><img width="760" height="786" loading="lazy" decoding="async" src="assets/img/p03_tank_new.png" alt="MODELO TANK EL├ëCTRICA 72V 55AH"></div>
       <div class="pr-card">
-        <div class="pr-eyebrow">Motos Eléctricas</div>
-        <h3 class="pr-title"><span>MODELO TANK</span><span class="y">ELÉCTRICA</span><span>72V 55AH</span></h3>
+        <div class="pr-eyebrow">Motos El├®ctricas</div>
+        <h3 class="pr-title"><span>MODELO TANK</span><span class="y">EL├ëCTRICA</span><span>72V 55AH</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 2.800 - US$ 3.000</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#f2f2f2"></i>White</span><span class="sw"><i style="background:#d8c089"></i>Yellow</span><span class="sw"><i style="background:#b7babf"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Velocidad Máxima</dt><dd>65 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>3000 W</dd></div><div class="sp"><dt>Batería</dt><dd>Litio 72V y 55Ah</dd></div><div class="sp"><dt>Entrada Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>120-150 km</dd></div><div class="sp"><dt>Frenos</dt><dd>Delantero / Trasero</dd></div><div class="sp"><dt>Carga Máxima</dt><dd>200 kg</dd></div><div class="sp"><dt>Neumáticos</dt><dd>120/70-12 sin cámara</dd></div><div class="sp"><dt>Cantidad en Contenedor</dt><dd>200 kg</dd></div></dl>
+        <dl class="card-specs"><div class="sp"><dt>Velocidad M├íxima</dt><dd>65 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>3000 W</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>Litio 72V y 55Ah</dd></div><div class="sp"><dt>Entrada Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>120-150 km</dd></div><div class="sp"><dt>Frenos</dt><dd>Delantero / Trasero</dd></div><div class="sp"><dt>Carga M├íxima</dt><dd>200 kg</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>120/70-12 sin c├ímara</dd></div><div class="sp"><dt>Cantidad en Contenedor</dt><dd>200 kg</dd></div></dl>
         
 
       </div>
@@ -162,12 +135,12 @@
     <div class="pr-inner">
       <div class="pr-media"><div class="pr-halo"></div><img width="760" height="863" loading="lazy" decoding="async" src="assets/img/p04_vol.png" alt="VOL 3000W 60V 50AH"></div>
       <div class="pr-card">
-        <div class="pr-eyebrow">Motos Eléctricas</div>
+        <div class="pr-eyebrow">Motos El├®ctricas</div>
         <h3 class="pr-title"><span>VOL 3000W</span><span class="y">60V 50AH</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 2.800 - US$ 3.000</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#2f5d86"></i>Blue</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span><span class="sw"><i style="background:#1c1c1e"></i>Black</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Velocidad Máxima</dt><dd>55 km/h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>80 km</dd></div><div class="sp"><dt>Batería</dt><dd>Litio 60V 50Ah</dd></div><div class="sp"><dt>Entrada Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Freno del./tras.</dt><dd>Disco/Tambor</dd></div><div class="sp"><dt>Neumáticos</dt><dd>3.5-10 sin cámara</dd></div><div class="sp"><dt>Peso Neto</dt><dd>65 kg</dd></div><div class="sp"><dt>Tipo</dt><dd>MOTO ELÉCTRICA</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Bateria de Litio, Recarga: 6-8 h. Entrada cargador: 100-240 V. Freno: Disco/Tambor. Neumaticos: 3.5-10 sin camara. Velocidad max: 55 km/h. Kilometraje: 80 km. Peso neto: 65 kg. Dimensiones: 1580x420x850 mm.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Velocidad M├íxima</dt><dd>55 km/h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>80 km</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>Litio 60V 50Ah</dd></div><div class="sp"><dt>Entrada Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Freno del./tras.</dt><dd>Disco/Tambor</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>3.5-10 sin c├ímara</dd></div><div class="sp"><dt>Peso Neto</dt><dd>65 kg</dd></div><div class="sp"><dt>Tipo</dt><dd>MOTO EL├ëCTRICA</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Bateria de Litio, Recarga: 6-8 h. Entrada cargador: 100-240 V. Freno: Disco/Tambor. Neumaticos: 3.5-10 sin camara. Velocidad max: 55 km/h. Kilometraje: 80 km. Peso neto: 65 kg. Dimensiones: 1580x420x850 mm.</p></details>
 
       </div>
     </div>
@@ -176,12 +149,12 @@
     <div class="pr-inner">
       <div class="pr-media"><div class="pr-halo"></div><img width="760" height="771" loading="lazy" decoding="async" src="assets/img/p05_3000w.png" alt="MOTO ELECTRICA 3000W 72V 70AH"></div>
       <div class="pr-card">
-        <div class="pr-eyebrow">Motos Eléctricas</div>
+        <div class="pr-eyebrow">Motos El├®ctricas</div>
         <h3 class="pr-title"><span>MOTO ELECTRICA</span><span class="y">3000W</span><span>72V 70AH</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 2.800 - US$ 3.000</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1f6f6a"></i>Teal</span><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Velocidad Máxima</dt><dd>70 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>3000W QS MOTOR</dd></div><div class="sp"><dt>Batería</dt><dd>Lithium ION 72V 70Ah</dd></div><div class="sp"><dt>Autonomía</dt><dd>180 km por carga</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>4 horas</dd></div><div class="sp"><dt>Torque Máximo</dt><dd>Controlador VOTOL</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del / Disco tras</dd></div><div class="sp"><dt>Peso</dt><dd>N/A</dd></div><div class="sp"><dt>Neumáticos</dt><dd>130/60/13</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor 3000W QS MOTOR. Controlador VOTOL. Bateria Lithium ION 72V 70Ah. 5 velocidades. Amortiguadores de gas. 180km por carga. Velocimetro digital. Muffler MP3, SD, USB.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Velocidad M├íxima</dt><dd>70 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>3000W QS MOTOR</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>Lithium ION 72V 70Ah</dd></div><div class="sp"><dt>Autonom├¡a</dt><dd>180 km por carga</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>4 horas</dd></div><div class="sp"><dt>Torque M├íximo</dt><dd>Controlador VOTOL</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del / Disco tras</dd></div><div class="sp"><dt>Peso</dt><dd>N/A</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>130/60/13</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor 3000W QS MOTOR. Controlador VOTOL. Bateria Lithium ION 72V 70Ah. 5 velocidades. Amortiguadores de gas. 180km por carga. Velocimetro digital. Muffler MP3, SD, USB.</p></details>
 
       </div>
     </div>
@@ -190,12 +163,12 @@
     <div class="pr-inner">
       <div class="pr-media"><div class="pr-halo"></div><img width="760" height="960" loading="lazy" decoding="async" src="assets/img/p06_cricket.png" alt="MOTO ELECTRICA CRICKET"></div>
       <div class="pr-card">
-        <div class="pr-eyebrow">Motos Eléctricas</div>
+        <div class="pr-eyebrow">Motos El├®ctricas</div>
         <h3 class="pr-title"><span>MOTO ELECTRICA</span><span class="y">CRICKET</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 1.750 - US$ 2.000</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#b7babf"></i>Grey</span><span class="sw"><i style="background:#1c1c1e"></i>Black</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Velocidad Máxima</dt><dd>45 km/h</dd></div><div class="sp"><dt>Modelo</dt><dd>Cricket</dd></div><div class="sp"><dt>Batería</dt><dd>Litio</dd></div><div class="sp"><dt>Entrada del Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>70 km</dd></div><div class="sp"><dt>Freno del./tras.</dt><dd>Disco/Tambor</dd></div><div class="sp"><dt>Peso Neto</dt><dd>55 kg (sin batería)</dd></div><div class="sp"><dt>Neumáticos</dt><dd>80/90-14&quot; sin cámara</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Bateria de Litio, Recarga: 6-8 h. Freno: Disco/Tambor. Neumaticos: 80/90-14&quot; sin camara. Velocidad max: 45 km/h. Kilometraje: 70 km. Peso neto: 55 kg (sin bateria).</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Velocidad M├íxima</dt><dd>45 km/h</dd></div><div class="sp"><dt>Modelo</dt><dd>Cricket</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>Litio</dd></div><div class="sp"><dt>Entrada del Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>70 km</dd></div><div class="sp"><dt>Freno del./tras.</dt><dd>Disco/Tambor</dd></div><div class="sp"><dt>Peso Neto</dt><dd>55 kg (sin bater├¡a)</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>80/90-14&quot; sin c├ímara</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Bateria de Litio, Recarga: 6-8 h. Freno: Disco/Tambor. Neumaticos: 80/90-14&quot; sin camara. Velocidad max: 45 km/h. Kilometraje: 70 km. Peso neto: 55 kg (sin bateria).</p></details>
 
       </div>
     </div>
@@ -204,25 +177,25 @@
     <div class="pr-inner">
       <div class="pr-media"><div class="pr-halo"></div><img width="760" height="856" loading="lazy" decoding="async" src="assets/img/p07_vespa.png" alt="VESPA ELECTRICA 3000W"></div>
       <div class="pr-card">
-        <div class="pr-eyebrow">Motos Eléctricas</div>
+        <div class="pr-eyebrow">Motos El├®ctricas</div>
         <h3 class="pr-title"><span>VESPA</span><span class="y">ELECTRICA</span><span>3000W</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 1.850 - US$ 2.150</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#45484d"></i>D.Grey</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span><span class="sw"><i style="background:#2a2a2e"></i>Matte</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Velocidad Máxima</dt><dd>55 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>3000W</dd></div><div class="sp"><dt>Batería</dt><dd>Litio 60V 50Ah</dd></div><div class="sp"><dt>Entrada Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>70-80 km</dd></div><div class="sp"><dt>Freno del./tras.</dt><dd>Disco/Tambor</dd></div><div class="sp"><dt>Peso</dt><dd>52 kg (sin batería)</dd></div><div class="sp"><dt>Neumáticos</dt><dd>3.0-10 sin cámara</dd></div><div class="sp"><dt>Voltaje</dt><dd>60V</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Bateria de Litio 60V 50Ah. Recarga: 6-8 h | Entrada: 100-240V. Freno: Disco/Tambor. Neumaticos: 3.0-10 sin camara. Velocidad max: 55 km/h. Kilometraje: 70-80 km. Peso neto: 52 kg (sin bateria).</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Velocidad M├íxima</dt><dd>55 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>3000W</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>Litio 60V 50Ah</dd></div><div class="sp"><dt>Entrada Cargador</dt><dd>100-240 V</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>6-8 h</dd></div><div class="sp"><dt>Kilometraje</dt><dd>70-80 km</dd></div><div class="sp"><dt>Freno del./tras.</dt><dd>Disco/Tambor</dd></div><div class="sp"><dt>Peso</dt><dd>52 kg (sin bater├¡a)</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>3.0-10 sin c├ímara</dd></div><div class="sp"><dt>Voltaje</dt><dd>60V</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Bateria de Litio 60V 50Ah. Recarga: 6-8 h | Entrada: 100-240V. Freno: Disco/Tambor. Neumaticos: 3.0-10 sin camara. Velocidad max: 55 km/h. Kilometraje: 70-80 km. Peso neto: 52 kg (sin bateria).</p></details>
 
       </div>
     </div>
   </section>
-  <section class="panel divider" id="sec-02" data-screen-label="Sección 02">
+  <section class="panel divider" id="sec-02" data-screen-label="Secci├│n 02">
     <div class="dv-inner">
       <div class="dv-text">
         <div class="dv-num" aria-hidden="true">02</div>
         <div class="dv-bar"></div>
-        <h2 class="dv-title">TRICICLOS<span>ELÉCTRICOS</span></h2>
-        <div class="dv-sec">SECCIÓN <b>02</b></div>
+        <h2 class="dv-title">TRICICLOS<span>EL├ëCTRICOS</span></h2>
+        <div class="dv-sec">SECCI├ôN <b>02</b></div>
       </div>
-      <div class="dv-veh"><div class="dv-halo"></div><img width="760" height="546" loading="lazy" decoding="async" src="assets/img/div02_dccargo.png" alt="Triciclos Eléctricos"></div>
+      <div class="dv-veh"><div class="dv-halo"></div><img width="760" height="546" loading="lazy" decoding="async" src="assets/img/div02_dccargo.png" alt="Triciclos El├®ctricos"></div>
     </div>
   </section>
   <section class="panel product" id="prod-6" data-screen-label="TRICICLO COMBUSTION 250CC 4T">
@@ -233,15 +206,15 @@
         <h3 class="pr-title"><span>TRICICLO</span><span>COMBUSTION</span><span class="y">250CC 4T</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 4.500 - US$ 5.200</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#f2f2f2"></i>White</span><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#c7ccd1"></i>Silver</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Velocidad Máxima</dt><dd>50-60 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>250cc, 4T, monocilíndrico</dd></div><div class="sp"><dt>Combustible</dt><dd>Tanque 15 litros</dd></div><div class="sp"><dt>Rendimiento</dt><dd>23-38 km/L</dd></div><div class="sp"><dt>Transmisión</dt><dd>5 vel. + reversa</dd></div><div class="sp"><dt>Capacidad de Carga</dt><dd>500 kg - 1.5 ton</dd></div><div class="sp"><dt>Suspensión</dt><dd>Telesc. del. / muelles tras.</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neumáticos</dt><dd>4.50-12</dd></div><div class="sp"><dt>Arranque</dt><dd>Eléctrico y pedal</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Algunos modelos vienen con cabina de lámina de acero, faros y calaveras LED, y hasta ventilador interno para el conductor. Pueden incluir asientos laterales para pasajeros, convirtiéndolos en unidades de transporte público o familiar. Diseñados para ser resistentes, económicos en mantenimiento y con repuestos accesibles. En resumen, el Treck 250cc es una herramienta de trabajo versátil, ideal para rutas urbanas y terrenos variados.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Velocidad M├íxima</dt><dd>50-60 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>250cc, 4T, monocil├¡ndrico</dd></div><div class="sp"><dt>Combustible</dt><dd>Tanque 15 litros</dd></div><div class="sp"><dt>Rendimiento</dt><dd>23-38 km/L</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>5 vel. + reversa</dd></div><div class="sp"><dt>Capacidad de Carga</dt><dd>500 kg - 1.5 ton</dd></div><div class="sp"><dt>Suspensi├│n</dt><dd>Telesc. del. / muelles tras.</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>4.50-12</dd></div><div class="sp"><dt>Arranque</dt><dd>El├®ctrico y pedal</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Algunos modelos vienen con cabina de l├ímina de acero, faros y calaveras LED, y hasta ventilador interno para el conductor. Pueden incluir asientos laterales para pasajeros, convirti├®ndolos en unidades de transporte p├║blico o familiar. Dise├▒ados para ser resistentes, econ├│micos en mantenimiento y con repuestos accesibles. En resumen, el Treck 250cc es una herramienta de trabajo vers├ítil, ideal para rutas urbanas y terrenos variados.</p></details>
         <div class="cta-box">
           <svg class="cta-hud" viewBox="0 0 60 18" fill="none" aria-hidden="true"><path d="M0 4 H38 L46 12 H60" stroke="#f5c400" stroke-width="1.3" opacity=".8"/><rect x="35" y="1.5" width="5" height="5" fill="#f5c400"/></svg>
           <div class="cta-sep"></div>
-          <h4 class="cta-title">¿Querés equipar este vehículo?</h4>
-          <p class="cta-text">Consultá presupuesto para agregar paneles solares de carga y maximizar tu autonomía.</p>
+          <h4 class="cta-title">┬┐Quer├®s equipar este veh├¡culo?</h4>
+          <p class="cta-text">Consult├í presupuesto para agregar paneles solares de carga y maximizar tu autonom├¡a.</p>
           <div class="cta-actions">
-            <span class="btn-action primary">Se pueden colocar paneles solares</span>
+            <a class="btn-wa primary" data-wa="Hola Smile Motors. Quisiera agregar paneles solares al modelo TRICICLO COMBUSTION 250CC 4T. ┬┐Me pasan informaci├│n y costos?" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Agregar paneles solares al veh├¡culo</a>
           </div>
         </div>
       </div>
@@ -255,15 +228,15 @@
         <h3 class="pr-title"><span>TRICICLO</span><span>ELECTRICO</span><span class="y">1000W</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 3.400 - US$ 3.900</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#f2f2f2"></i>White</span><span class="sw"><i style="background:#2f5d86"></i>Blue</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Velocidad Máxima</dt><dd>35-70 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>1000W</dd></div><div class="sp"><dt>Batería</dt><dd>60V 45Ah</dd></div><div class="sp"><dt>Autonomía</dt><dd>40-90 km</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>7-9 h</dd></div><div class="sp"><dt>Capacidad de Carga</dt><dd>200-400+ kg</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neumáticos</dt><dd>300x10 / Fat Tires</dd></div><div class="sp"><dt>Pendiente</dt><dd>Hasta 25°</dd></div><div class="sp"><dt>Funciones Extra</dt><dd>Reversa, 3 modos</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor 1000W sin escobillas, 60V. Capacidad de carga: 200-400+ kg. Velocidad: 35-70 km/h. Autonomia: 40-90 km por carga. Bateria 60V 45Ah, carga en 7-9 horas. Frenos: disco/tambor + freno de mano. Suspension delantera y trasera, luces LED, display digital, camara de reversa. Marcha atras, 3 modos de manejo, extensor de rango opcional. Ideal para carga ligera, entregas, agricultura y movilidad personal.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Velocidad M├íxima</dt><dd>35-70 km/h</dd></div><div class="sp"><dt>Motor</dt><dd>1000W</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>60V 45Ah</dd></div><div class="sp"><dt>Autonom├¡a</dt><dd>40-90 km</dd></div><div class="sp"><dt>Tiempo de Carga</dt><dd>7-9 h</dd></div><div class="sp"><dt>Capacidad de Carga</dt><dd>200-400+ kg</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>300x10 / Fat Tires</dd></div><div class="sp"><dt>Pendiente</dt><dd>Hasta 25┬░</dd></div><div class="sp"><dt>Funciones Extra</dt><dd>Reversa, 3 modos</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor 1000W sin escobillas, 60V. Capacidad de carga: 200-400+ kg. Velocidad: 35-70 km/h. Autonomia: 40-90 km por carga. Bateria 60V 45Ah, carga en 7-9 horas. Frenos: disco/tambor + freno de mano. Suspension delantera y trasera, luces LED, display digital, camara de reversa. Marcha atras, 3 modos de manejo, extensor de rango opcional. Ideal para carga ligera, entregas, agricultura y movilidad personal.</p></details>
         <div class="cta-box">
           <svg class="cta-hud" viewBox="0 0 60 18" fill="none" aria-hidden="true"><path d="M0 4 H38 L46 12 H60" stroke="#f5c400" stroke-width="1.3" opacity=".8"/><rect x="35" y="1.5" width="5" height="5" fill="#f5c400"/></svg>
           <div class="cta-sep"></div>
-          <h4 class="cta-title">¿Querés equipar este vehículo?</h4>
-          <p class="cta-text">Consultá presupuesto para agregar paneles solares de carga y maximizar tu autonomía.</p>
+          <h4 class="cta-title">┬┐Quer├®s equipar este veh├¡culo?</h4>
+          <p class="cta-text">Consult├í presupuesto para agregar paneles solares de carga y maximizar tu autonom├¡a.</p>
           <div class="cta-actions">
-            <span class="btn-action primary">Se pueden colocar paneles solares</span>
+            <a class="btn-wa primary" data-wa="Hola Smile Motors. Quisiera agregar paneles solares al modelo TRICICLO ELECTRICO 1000W. ┬┐Me pasan informaci├│n y costos?" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Agregar paneles solares al veh├¡culo</a>
           </div>
         </div>
       </div>
@@ -277,15 +250,15 @@
         <h3 class="pr-title"><span>TRICICLO</span><span class="y">HIBRIDO 72V</span><span>105AH</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 4.800 - US$ 5.000</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>1200W sin escobillas</dd></div><div class="sp"><dt>Batería</dt><dd>72V / 105Ah</dd></div><div class="sp"><dt>Transmisión</dt><dd>3 velocidades</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>35 km/h</dd></div><div class="sp"><dt>Carga Máxima</dt><dd>1500 kg</dd></div><div class="sp"><dt>Autonomía</dt><dd>100-120 km (250 c/ext)</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neumáticos</dt><dd>Del: 4.00-12 / Tras: 145/70-12</dd></div><div class="sp"><dt>Suspensión</dt><dd>Reforzada (hidráulica+muelle)</dd></div><div class="sp"><dt>Tanque</dt><dd>4 litros</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Modelo DC1200. Motor: 1200W sin escobillas (Brushless). Bateria: 72V/105AH LiFePo4. Transmision: 3 velocidades. Freno delantero: Disco / Trasero: Tambor. Vel. maxima: 35 KM/H. Carga maxima: 1500 KG. Diferencial trasero flotante. Neumaticos del: 4.00-12 / tras: 145/70-12. Area carga: 1600x1100mm. Autonomia: 100-120KM. Con extensor: 250 KM (6000W, tanque 4L). Suspension reforzada. 8 pasajeros. Luces LED. Camara retroceso. Bluetooth/USB. Alarma.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>1200W sin escobillas</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>72V / 105Ah</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>3 velocidades</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>35 km/h</dd></div><div class="sp"><dt>Carga M├íxima</dt><dd>1500 kg</dd></div><div class="sp"><dt>Autonom├¡a</dt><dd>100-120 km (250 c/ext)</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>Del: 4.00-12 / Tras: 145/70-12</dd></div><div class="sp"><dt>Suspensi├│n</dt><dd>Reforzada (hidr├íulica+muelle)</dd></div><div class="sp"><dt>Tanque</dt><dd>4 litros</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Modelo DC1200. Motor: 1200W sin escobillas (Brushless). Bateria: 72V/105AH LiFePo4. Transmision: 3 velocidades. Freno delantero: Disco / Trasero: Tambor. Vel. maxima: 35 KM/H. Carga maxima: 1500 KG. Diferencial trasero flotante. Neumaticos del: 4.00-12 / tras: 145/70-12. Area carga: 1600x1100mm. Autonomia: 100-120KM. Con extensor: 250 KM (6000W, tanque 4L). Suspension reforzada. 8 pasajeros. Luces LED. Camara retroceso. Bluetooth/USB. Alarma.</p></details>
         <div class="cta-box">
           <svg class="cta-hud" viewBox="0 0 60 18" fill="none" aria-hidden="true"><path d="M0 4 H38 L46 12 H60" stroke="#f5c400" stroke-width="1.3" opacity=".8"/><rect x="35" y="1.5" width="5" height="5" fill="#f5c400"/></svg>
           <div class="cta-sep"></div>
-          <h4 class="cta-title">¿Querés equipar este vehículo?</h4>
-          <p class="cta-text">Consultá presupuesto para agregar paneles solares de carga y maximizar tu autonomía.</p>
+          <h4 class="cta-title">┬┐Quer├®s equipar este veh├¡culo?</h4>
+          <p class="cta-text">Consult├í presupuesto para agregar paneles solares de carga y maximizar tu autonom├¡a.</p>
           <div class="cta-actions">
-            <span class="btn-action primary">Se pueden colocar paneles solares</span>
+            <a class="btn-wa primary" data-wa="Hola Smile Motors. Quisiera agregar paneles solares al modelo TRICICLO HIBRIDO 72V 105AH. ┬┐Me pasan informaci├│n y costos?" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Agregar paneles solares al veh├¡culo</a>
           </div>
         </div>
       </div>
@@ -299,15 +272,15 @@
         <h3 class="pr-title"><span>TRICICLO</span><span>ELECTRICO</span><span class="y">1000W</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 3.700 - US$ 4.300</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#2f5d86"></i>Blue</span><span class="sw"><i style="background:#2f6f4f"></i>Green</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>1000W sin escobillas</dd></div><div class="sp"><dt>Batería</dt><dd>60V / 45Ah</dd></div><div class="sp"><dt>Transmisión</dt><dd>3 modos de manejo</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>35-70 km/h</dd></div><div class="sp"><dt>Carga Máxima</dt><dd>200-400 kg</dd></div><div class="sp"><dt>Autonomía</dt><dd>40-90 km por carga</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor / Mano</dd></div><div class="sp"><dt>Neumáticos</dt><dd>300x10 o Fat Tires todoterreno</dd></div><div class="sp"><dt>Suspensión</dt><dd>Delantera y trasera</dd></div><div class="sp"><dt>Pendiente</dt><dd>Hasta 25°</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor: 1000W sin escobillas (Brushless). Voltaje: 60V (45Ah). Velocidad: 35-70 KM/H. Carga: 200-400 KG. Autonomia: 40-90 KM. Frenos: Disco delantero, tambor, freno de mano/pie. Confort: Suspension del/tras, luces LED, bocina, display digital, camara reversa. Funciones: Marcha atras, 3 modos, extensor de rango opcional. Usos: Carga ligera, compras, agricultura, entregas, movilidad personal.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>1000W sin escobillas</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>60V / 45Ah</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>3 modos de manejo</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>35-70 km/h</dd></div><div class="sp"><dt>Carga M├íxima</dt><dd>200-400 kg</dd></div><div class="sp"><dt>Autonom├¡a</dt><dd>40-90 km por carga</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor / Mano</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>300x10 o Fat Tires todoterreno</dd></div><div class="sp"><dt>Suspensi├│n</dt><dd>Delantera y trasera</dd></div><div class="sp"><dt>Pendiente</dt><dd>Hasta 25┬░</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor: 1000W sin escobillas (Brushless). Voltaje: 60V (45Ah). Velocidad: 35-70 KM/H. Carga: 200-400 KG. Autonomia: 40-90 KM. Frenos: Disco delantero, tambor, freno de mano/pie. Confort: Suspension del/tras, luces LED, bocina, display digital, camara reversa. Funciones: Marcha atras, 3 modos, extensor de rango opcional. Usos: Carga ligera, compras, agricultura, entregas, movilidad personal.</p></details>
         <div class="cta-box">
           <svg class="cta-hud" viewBox="0 0 60 18" fill="none" aria-hidden="true"><path d="M0 4 H38 L46 12 H60" stroke="#f5c400" stroke-width="1.3" opacity=".8"/><rect x="35" y="1.5" width="5" height="5" fill="#f5c400"/></svg>
           <div class="cta-sep"></div>
-          <h4 class="cta-title">¿Querés equipar este vehículo?</h4>
-          <p class="cta-text">Consultá presupuesto para agregar paneles solares de carga y maximizar tu autonomía.</p>
+          <h4 class="cta-title">┬┐Quer├®s equipar este veh├¡culo?</h4>
+          <p class="cta-text">Consult├í presupuesto para agregar paneles solares de carga y maximizar tu autonom├¡a.</p>
           <div class="cta-actions">
-            <span class="btn-action primary">Se pueden colocar paneles solares</span>
+            <a class="btn-wa primary" data-wa="Hola Smile Motors. Quisiera agregar paneles solares al modelo TRICICLO ELECTRICO 1000W. ┬┐Me pasan informaci├│n y costos?" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Agregar paneles solares al veh├¡culo</a>
           </div>
         </div>
       </div>
@@ -321,29 +294,29 @@
         <h3 class="pr-title"><span>TRICICLO</span><span>ELECTRICO</span><span class="y">TOPMAQ 2000W</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 4.100,00 - US$ 4.500,00</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#243447"></i>Navy</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#45484d"></i>D.Grey</span><span class="sw"><i style="background:#c7ccd1"></i>Silver</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>2000W sin escobillas</dd></div><div class="sp"><dt>Batería</dt><dd>72V / 58Ah Plomo-Ácido</dd></div><div class="sp"><dt>Transmisión</dt><dd>VOTOL EM-100</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>50 km/h</dd></div><div class="sp"><dt>Carga Máxima</dt><dd>1000 kg</dd></div><div class="sp"><dt>Autonomía</dt><dd>Según uso y carga</dd></div><div class="sp"><dt>Frenos</dt><dd>Tambor tras. / Tambor tras.</dd></div><div class="sp"><dt>Neumáticos</dt><dd>F-4.00-12 / R-145/70-12</dd></div><div class="sp"><dt>Suspensión</dt><dd>Estándar</dd></div><div class="sp"><dt>Pendiente</dt><dd>20°</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor: 2000W sin escobillas. Controlador: VOTOL EM-100. Bateria: 72V 58AH Plomo Acido. Carga maxima: 1000 KG. Vel. maxima: 50 KM/H. Angulo ascenso: 20 grados. Peso: 220 KG sin bateria. Tamano: 3050x1100x1200mm. Huella: 900mm. Distancia entre ejes: 2035mm. Dist. al suelo: 220mm. Carroceria: Acero. Area de carga: 1600x1100x420mm. Frenos: Tambor trasero doble. Neumaticos: F-4.00-12 / R-145/70-12.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>2000W sin escobillas</dd></div><div class="sp"><dt>Bater├¡a</dt><dd>72V / 58Ah Plomo-├ücido</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>VOTOL EM-100</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>50 km/h</dd></div><div class="sp"><dt>Carga M├íxima</dt><dd>1000 kg</dd></div><div class="sp"><dt>Autonom├¡a</dt><dd>Seg├║n uso y carga</dd></div><div class="sp"><dt>Frenos</dt><dd>Tambor tras. / Tambor tras.</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>F-4.00-12 / R-145/70-12</dd></div><div class="sp"><dt>Suspensi├│n</dt><dd>Est├índar</dd></div><div class="sp"><dt>Pendiente</dt><dd>20┬░</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor: 2000W sin escobillas. Controlador: VOTOL EM-100. Bateria: 72V 58AH Plomo Acido. Carga maxima: 1000 KG. Vel. maxima: 50 KM/H. Angulo ascenso: 20 grados. Peso: 220 KG sin bateria. Tamano: 3050x1100x1200mm. Huella: 900mm. Distancia entre ejes: 2035mm. Dist. al suelo: 220mm. Carroceria: Acero. Area de carga: 1600x1100x420mm. Frenos: Tambor trasero doble. Neumaticos: F-4.00-12 / R-145/70-12.</p></details>
         <div class="cta-box">
           <svg class="cta-hud" viewBox="0 0 60 18" fill="none" aria-hidden="true"><path d="M0 4 H38 L46 12 H60" stroke="#f5c400" stroke-width="1.3" opacity=".8"/><rect x="35" y="1.5" width="5" height="5" fill="#f5c400"/></svg>
           <div class="cta-sep"></div>
-          <h4 class="cta-title">¿Querés equipar este vehículo?</h4>
-          <p class="cta-text">Consultá presupuesto para agregar paneles solares de carga y maximizar tu autonomía.</p>
+          <h4 class="cta-title">┬┐Quer├®s equipar este veh├¡culo?</h4>
+          <p class="cta-text">Consult├í presupuesto para agregar paneles solares de carga y maximizar tu autonom├¡a.</p>
           <div class="cta-actions">
-            <span class="btn-action primary">Se pueden colocar paneles solares</span>
+            <a class="btn-wa primary" data-wa="Hola Smile Motors. Quisiera agregar paneles solares al modelo TRICICLO ELECTRICO TOPMAQ 2000W. ┬┐Me pasan informaci├│n y costos?" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>Agregar paneles solares al veh├¡culo</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="panel divider" id="sec-03" data-screen-label="Sección 03">
+  <section class="panel divider" id="sec-03" data-screen-label="Secci├│n 03">
     <div class="dv-inner">
       <div class="dv-text">
         <div class="dv-num" aria-hidden="true">03</div>
         <div class="dv-bar"></div>
-        <h2 class="dv-title">COMBUSTIÓN<span>E HÍBRIDOS</span></h2>
-        <div class="dv-sec">SECCIÓN <b>03</b></div>
+        <h2 class="dv-title">COMBUSTI├ôN<span>E H├ìBRIDOS</span></h2>
+        <div class="dv-sec">SECCI├ôN <b>03</b></div>
       </div>
-      <div class="dv-veh"><div class="dv-halo"></div><img width="760" height="476" loading="lazy" decoding="async" src="assets/img/p19_gn125f.png" alt="Combustión e Híbridos"></div>
+      <div class="dv-veh"><div class="dv-halo"></div><img width="760" height="476" loading="lazy" decoding="async" src="assets/img/p19_gn125f.png" alt="Combusti├│n e H├¡bridos"></div>
     </div>
   </section>
   <section class="panel product" id="prod-11" data-screen-label="FONTS 250">
@@ -354,8 +327,8 @@
         <h3 class="pr-title"><span class="y">FONTS 250</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 3.700 - US$ 4.300</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#f2f2f2"></i>White</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>200cc 4T OHC Monocilíndrico</dd></div><div class="sp"><dt>Potencia</dt><dd>16 HP @ 7500 rpm</dd></div><div class="sp"><dt>Transmisión</dt><dd>Mecánica 6 velocidades</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>110 km/h (aprox.)</dd></div><div class="sp"><dt>Refrigeración</dt><dd>Por aceite</dd></div><div class="sp"><dt>Arranque</dt><dd>Eléctrico</dd></div><div class="sp"><dt>Frenos</dt><dd>Doble disco del. / Disco tras.</dd></div><div class="sp"><dt>Tablero</dt><dd>Digital / Ride Vision / Bluetooth</dd></div><div class="sp"><dt>Suspensión</dt><dd>Telescópica / Monoshock</dd></div><div class="sp"><dt>Tanque</dt><dd>14 litros</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor: 200cc, 4T, OHC, monocilindrico. Potencia: 16 HP @ 7500 rpm. Transmision: Mecanica 6 velocidades. Arranque: Electrico. Freno delantero: Doble disco ventilado, caliper doble piston. Freno posterior: Disco ventilado monopiston. Refrigeracion: Por aceite. Tablero digital con Ride Vision y conectividad Bluetooth. Suspension: Telescopica del. / Monoshock tras. Tanque: 14L.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>200cc 4T OHC Monocil├¡ndrico</dd></div><div class="sp"><dt>Potencia</dt><dd>16 HP @ 7500 rpm</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>Mec├ínica 6 velocidades</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>110 km/h (aprox.)</dd></div><div class="sp"><dt>Refrigeraci├│n</dt><dd>Por aceite</dd></div><div class="sp"><dt>Arranque</dt><dd>El├®ctrico</dd></div><div class="sp"><dt>Frenos</dt><dd>Doble disco del. / Disco tras.</dd></div><div class="sp"><dt>Tablero</dt><dd>Digital / Ride Vision / Bluetooth</dd></div><div class="sp"><dt>Suspensi├│n</dt><dd>Telesc├│pica / Monoshock</dd></div><div class="sp"><dt>Tanque</dt><dd>14 litros</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor: 200cc, 4T, OHC, monocilindrico. Potencia: 16 HP @ 7500 rpm. Transmision: Mecanica 6 velocidades. Arranque: Electrico. Freno delantero: Doble disco ventilado, caliper doble piston. Freno posterior: Disco ventilado monopiston. Refrigeracion: Por aceite. Tablero digital con Ride Vision y conectividad Bluetooth. Suspension: Telescopica del. / Monoshock tras. Tanque: 14L.</p></details>
       </div>
     </div>
   </section>
@@ -367,8 +340,8 @@
         <h3 class="pr-title"><span class="y">XMT250</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 3.200,00 - US$ 4.300,00</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#c9a13b"></i>Gold</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>Zong Shen 223cc 4T</dd></div><div class="sp"><dt>Potencia</dt><dd>11.5 kW @ 7500 rpm</dd></div><div class="sp"><dt>Transmisión</dt><dd>Manual 6 vel. por cadena</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>110 km/h</dd></div><div class="sp"><dt>Torque</dt><dd>17.0 Nm @ 5500 rpm</dd></div><div class="sp"><dt>Peso</dt><dd>127 kg</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Disco tras.</dd></div><div class="sp"><dt>Neumáticos</dt><dd>Del: 110/70-17 / Tras: 140/70-17</dd></div><div class="sp"><dt>Arranque</dt><dd>Eléctrico</dd></div><div class="sp"><dt>Tanque</dt><dd>10 litros</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor Zong Shen 223cc, monocilindrico, 4T, refrigerado por aceite. Potencia: 11.5 kW @ 7500 rpm. Torque: 17.0 Nm @ 5500 rpm. Transmision manual 6 vel. por cadena. Arranque electrico. Frenos disco delantero y trasero. Vel. maxima: 110 km/h. Estilo deportivo Cafe Racer. Panel digital. Tanque: 10L. Ideal para uso urbano y carretera. Peso: 127 kg.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>Zong Shen 223cc 4T</dd></div><div class="sp"><dt>Potencia</dt><dd>11.5 kW @ 7500 rpm</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>Manual 6 vel. por cadena</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>110 km/h</dd></div><div class="sp"><dt>Torque</dt><dd>17.0 Nm @ 5500 rpm</dd></div><div class="sp"><dt>Peso</dt><dd>127 kg</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Disco tras.</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>Del: 110/70-17 / Tras: 140/70-17</dd></div><div class="sp"><dt>Arranque</dt><dd>El├®ctrico</dd></div><div class="sp"><dt>Tanque</dt><dd>10 litros</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor Zong Shen 223cc, monocilindrico, 4T, refrigerado por aceite. Potencia: 11.5 kW @ 7500 rpm. Torque: 17.0 Nm @ 5500 rpm. Transmision manual 6 vel. por cadena. Arranque electrico. Frenos disco delantero y trasero. Vel. maxima: 110 km/h. Estilo deportivo Cafe Racer. Panel digital. Tanque: 10L. Ideal para uso urbano y carretera. Peso: 127 kg.</p></details>
       </div>
     </div>
   </section>
@@ -380,8 +353,8 @@
         <h3 class="pr-title"><span class="y">CHP 200</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 2.600 - US$ 3.500</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span><span class="sw"><i style="background:#f2f2f2"></i>White</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>Monocilíndrico 4T</dd></div><div class="sp"><dt>Cilindrada</dt><dd>200cc</dd></div><div class="sp"><dt>Transmisión</dt><dd>Manual</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>120 km/h</dd></div><div class="sp"><dt>Consumo</dt><dd>3 L/100km</dd></div><div class="sp"><dt>Arranque</dt><dd>Eléctrico + auxiliar de pie</dd></div><div class="sp"><dt>Refrigeración</dt><dd>Por aire</dd></div><div class="sp"><dt>Tanque</dt><dd>14 litros</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco delantero</dd></div><div class="sp"><dt>Tipo</dt><dd>Moto a combustión</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor monocilindrico 200cc, 4 tiempos, refrigerado por aire. Arranque electrico + auxiliar de pie. Tanque: 14L. Consumo: 3L/100km. Vel. maxima: 120 km/h. Combina potencia y velocidad con estetica agresiva. Ideal para uso urbano y carretera. Transmision manual. Moto a combustion con excelente relacion precio-rendimiento.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>Monocil├¡ndrico 4T</dd></div><div class="sp"><dt>Cilindrada</dt><dd>200cc</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>Manual</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>120 km/h</dd></div><div class="sp"><dt>Consumo</dt><dd>3 L/100km</dd></div><div class="sp"><dt>Arranque</dt><dd>El├®ctrico + auxiliar de pie</dd></div><div class="sp"><dt>Refrigeraci├│n</dt><dd>Por aire</dd></div><div class="sp"><dt>Tanque</dt><dd>14 litros</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco delantero</dd></div><div class="sp"><dt>Tipo</dt><dd>Moto a combusti├│n</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor monocilindrico 200cc, 4 tiempos, refrigerado por aire. Arranque electrico + auxiliar de pie. Tanque: 14L. Consumo: 3L/100km. Vel. maxima: 120 km/h. Combina potencia y velocidad con estetica agresiva. Ideal para uso urbano y carretera. Transmision manual. Moto a combustion con excelente relacion precio-rendimiento.</p></details>
       </div>
     </div>
   </section>
@@ -393,8 +366,8 @@
         <h3 class="pr-title"><span class="y">XMT250</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 3.200,00 - US$ 4.300,00</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#c9a13b"></i>Gold</span><span class="sw"><i style="background:#8a8d92"></i>Grey</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>Zong Shen 223cc 4T ref. aceite</dd></div><div class="sp"><dt>Potencia</dt><dd>11.5 kW @ 7500 rpm</dd></div><div class="sp"><dt>Transmisión</dt><dd>Manual 6 vel. por cadena</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>110 km/h</dd></div><div class="sp"><dt>Torque</dt><dd>17.0 Nm @ 5500 rpm</dd></div><div class="sp"><dt>Tanque</dt><dd>10 litros</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco delantero y trasero</dd></div><div class="sp"><dt>Neumáticos</dt><dd>Del: 110/70-17 / Tras: 140/70-17</dd></div><div class="sp"><dt>Peso</dt><dd>127 kg</dd></div><div class="sp"><dt>Panel</dt><dd>Velocímetro digital</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor: Zong Shen 223cc, monocilindrico, 4T, refrigerado por aceite. Potencia: 11.5 kW @ 7500 rpm. Torque: 17.0 Nm @ 5500 rpm. Transmision: Manual 6 velocidades por cadena. Arranque electrico. Frenos: Disco delantero y trasero. Vel. maxima: 110 km/h. Tanque: 10L. Peso: 127 kg. Panel digital. Estilo Cafe Racer. Ideal para uso urbano y carretera. Componentes solidos.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>Zong Shen 223cc 4T ref. aceite</dd></div><div class="sp"><dt>Potencia</dt><dd>11.5 kW @ 7500 rpm</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>Manual 6 vel. por cadena</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>110 km/h</dd></div><div class="sp"><dt>Torque</dt><dd>17.0 Nm @ 5500 rpm</dd></div><div class="sp"><dt>Tanque</dt><dd>10 litros</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco delantero y trasero</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>Del: 110/70-17 / Tras: 140/70-17</dd></div><div class="sp"><dt>Peso</dt><dd>127 kg</dd></div><div class="sp"><dt>Panel</dt><dd>Veloc├¡metro digital</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor: Zong Shen 223cc, monocilindrico, 4T, refrigerado por aceite. Potencia: 11.5 kW @ 7500 rpm. Torque: 17.0 Nm @ 5500 rpm. Transmision: Manual 6 velocidades por cadena. Arranque electrico. Frenos: Disco delantero y trasero. Vel. maxima: 110 km/h. Tanque: 10L. Peso: 127 kg. Panel digital. Estilo Cafe Racer. Ideal para uso urbano y carretera. Componentes solidos.</p></details>
       </div>
     </div>
   </section>
@@ -406,34 +379,34 @@
         <h3 class="pr-title"><span class="y">GN125 F</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 2.900,00 - US$ 3.700,00</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#c5202a"></i>Red</span><span class="sw"><i style="background:#c7ccd1"></i>Silver</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>124cc, 4T</dd></div><div class="sp"><dt>Potencia</dt><dd>12.5 HP</dd></div><div class="sp"><dt>Transmisión</dt><dd>5 velocidades</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>100 km/h</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Suspensión</dt><dd>Telesc. hidráulica / Doble amort.</dd></div><div class="sp"><dt>Alimentación</dt><dd>Carburador</dd></div><div class="sp"><dt>Peso</dt><dd>105 kg</dd></div><div class="sp"><dt>Tanque</dt><dd>10.3 - 12.5 litros</dd></div><div class="sp"><dt>Arranque</dt><dd>Eléctrico</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor: 124cc, 4 tiempos, OHC, 1 cilindro, enfriado por aire. Potencia: 12.5 HP. Alimentacion: Carburador. Transmision: 5 velocidades. Arranque: Electrico. Frenos: Disco delantero / Tambor trasero. Suspension: Telescopica hidraulica delantera / Basculante con doble amortiguador trasera. Estilo clasico retro con toques modernos. Ideal para trayectos diarios y ciudad. Bajo consumo y alta durabilidad. Tablero con nuevos indicadores.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>124cc, 4T</dd></div><div class="sp"><dt>Potencia</dt><dd>12.5 HP</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>5 velocidades</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>100 km/h</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Suspensi├│n</dt><dd>Telesc. hidr├íulica / Doble amort.</dd></div><div class="sp"><dt>Alimentaci├│n</dt><dd>Carburador</dd></div><div class="sp"><dt>Peso</dt><dd>105 kg</dd></div><div class="sp"><dt>Tanque</dt><dd>10.3 - 12.5 litros</dd></div><div class="sp"><dt>Arranque</dt><dd>El├®ctrico</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor: 124cc, 4 tiempos, OHC, 1 cilindro, enfriado por aire. Potencia: 12.5 HP. Alimentacion: Carburador. Transmision: 5 velocidades. Arranque: Electrico. Frenos: Disco delantero / Tambor trasero. Suspension: Telescopica hidraulica delantera / Basculante con doble amortiguador trasera. Estilo clasico retro con toques modernos. Ideal para trayectos diarios y ciudad. Bajo consumo y alta durabilidad. Tablero con nuevos indicadores.</p></details>
       </div>
     </div>
   </section>
   <section class="panel product" id="prod-16" data-screen-label="GN200">
     <div class="pr-inner">
-      <div class="pr-media"><div class="pr-halo"></div><img width="760" height="475" loading="lazy" decoding="async" src="assets/img/p22_gn200.png" alt="Suzuki GN200"></div>
+      <div class="pr-media"><div class="pr-halo"></div><div class="img-ph"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3"><rect x="14" y="30" width="92" height="60" rx="4"/><circle cx="44" cy="54" r="8"/><path d="M18 82 L48 58 L70 76 L86 62 L102 82"/></svg><span>Imagen pr├│ximamente</span></div></div>
       <div class="pr-card">
         <div class="pr-eyebrow">MODEL</div>
         <h3 class="pr-title"><span class="y">GN200</span></h3>
         <div class="pr-price"><span class="pc-lbl">Precio</span><span class="pc-val">US$ 2.400,00 - US$ 3.200,00</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#6e1722"></i>Wine</span><span class="sw"><i style="background:#c7ccd1"></i>Silver</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>199.5cc, 4T, monocilíndrico</dd></div><div class="sp"><dt>Potencia</dt><dd>13.5 HP @ 7500 rpm</dd></div><div class="sp"><dt>Transmisión</dt><dd>5 velocidades por cadena</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>90-105 km/h</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neumáticos</dt><dd>Del: 2.75-18 / Tras: 3.50-16</dd></div><div class="sp"><dt>Torque</dt><dd>13.0 Nm @ 6000 rpm</dd></div><div class="sp"><dt>Peso</dt><dd>118-132 kg</dd></div><div class="sp"><dt>Arranque</dt><dd>Eléctrico + Pedal</dd></div><div class="sp"><dt>Tanque</dt><dd>12.5 litros</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor: 199.5cc, 4 tiempos, monocilindrico, refrigerado por aire. Potencia: 13.5 HP @ 7500 RPM. Torque: 13.0 Nm @ 6000 rpm. Transmision: 5 velocidades por cadena. Arranque: Electrico y pedal. Sistema de Combustible: Carburador. Vel. maxima: 90-105 km/h. Frenos: Disco delantero / Tambor trasero. Tanque: 12.5 litros. Iluminacion halogena, puerto USB, tablero clasico con indicadores de marcha.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>199.5cc, 4T, monocil├¡ndrico</dd></div><div class="sp"><dt>Potencia</dt><dd>13.5 HP @ 7500 rpm</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>5 velocidades por cadena</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>90-105 km/h</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Tambor tras.</dd></div><div class="sp"><dt>Neum├íticos</dt><dd>Del: 2.75-18 / Tras: 3.50-16</dd></div><div class="sp"><dt>Torque</dt><dd>13.0 Nm @ 6000 rpm</dd></div><div class="sp"><dt>Peso</dt><dd>118-132 kg</dd></div><div class="sp"><dt>Arranque</dt><dd>El├®ctrico + Pedal</dd></div><div class="sp"><dt>Tanque</dt><dd>12.5 litros</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor: 199.5cc, 4 tiempos, monocilindrico, refrigerado por aire. Potencia: 13.5 HP @ 7500 RPM. Torque: 13.0 Nm @ 6000 rpm. Transmision: 5 velocidades por cadena. Arranque: Electrico y pedal. Sistema de Combustible: Carburador. Vel. maxima: 90-105 km/h. Frenos: Disco delantero / Tambor trasero. Tanque: 12.5 litros. Iluminacion halogena, puerto USB, tablero clasico con indicadores de marcha.</p></details>
       </div>
     </div>
   </section>
-  <section class="panel product" id="prod-17" data-screen-label="LEGACY 250 BICILÍNDRICA">
+  <section class="panel product" id="prod-17" data-screen-label="LEGACY 250 BICIL├ìNDRICA">
     <div class="pr-inner">
-      <div class="pr-media"><div class="pr-halo"></div><img width="760" height="460" loading="lazy" decoding="async" src="assets/img/p21_legacy250.png" alt="LEGACY 250 BICILÍNDRICA"></div>
+      <div class="pr-media"><div class="pr-halo"></div><img width="760" height="460" loading="lazy" decoding="async" src="assets/img/p21_legacy250.png" alt="LEGACY 250 BICIL├ìNDRICA"></div>
       <div class="pr-card">
         <div class="pr-eyebrow">MODEL</div>
-        <h3 class="pr-title"><span class="y">LEGACY 250</span><span>BICILÍNDRICA</span></h3>
+        <h3 class="pr-title"><span class="y">LEGACY 250</span><span>BICIL├ìNDRICA</span></h3>
         <div class="pr-price"><span class="pc-empty">Consultar precio</span></div>
         <div class="card-sws"><span class="sws-lbl">Colores disponibles</span><div class="sws-row"><span class="sw"><i style="background:#1c1c1e"></i>Black</span><span class="sw"><i style="background:#6e1722"></i>Wine</span></div></div>
-        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>250cc, 4T, Bicilíndrico</dd></div><div class="sp"><dt>Refrigeración</dt><dd>Aire / Aceite</dd></div><div class="sp"><dt>Potencia</dt><dd>17 - 22 HP</dd></div><div class="sp"><dt>Transmisión</dt><dd>5 velocidades por cadena</dd></div><div class="sp"><dt>Velocidad Máxima</dt><dd>110 - 130 km/h</dd></div><div class="sp"><dt>Consumo</dt><dd>25 - 35 km/L</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Disco-Tambor tras.</dd></div><div class="sp"><dt>Suspensión</dt><dd>Telesc. / Doble amortiguador</dd></div><div class="sp"><dt>Peso</dt><dd>150 - 170 kg</dd></div><div class="sp"><dt>Tanque</dt><dd>12 - 15 litros</dd></div><div class="sp"><dt>Arranque</dt><dd>Eléctrico</dd></div></dl>
-        <details class="card-more"><summary>Ver descripción completa</summary><p>Motor: 250cc, 4 tiempos, bicilindrico (en V o paralelo segun version), refrigerado por aire/aceite. Potencia: 17 a 22 HP. Vel. maxima: 110-130 km/h. Transmision: 5 velocidades, final por cadena. Arranque: Electrico. Consumo muy economico: 25-35 km/L. Frenos: Disco delantero / Disco o tambor trasero segun version. Suspension telescopica delantera y doble amortiguador trasero. Capacidad 2 pasajeros. Ideal para uso diario y viajes cortos: excelente relacion precio-calidad y bajo costo de mantenimiento.</p></details>
+        <dl class="card-specs"><div class="sp"><dt>Motor</dt><dd>250cc, 4T, Bicil├¡ndrico</dd></div><div class="sp"><dt>Refrigeraci├│n</dt><dd>Aire / Aceite</dd></div><div class="sp"><dt>Potencia</dt><dd>17 - 22 HP</dd></div><div class="sp"><dt>Transmisi├│n</dt><dd>5 velocidades por cadena</dd></div><div class="sp"><dt>Velocidad M├íxima</dt><dd>110 - 130 km/h</dd></div><div class="sp"><dt>Consumo</dt><dd>25 - 35 km/L</dd></div><div class="sp"><dt>Frenos</dt><dd>Disco del. / Disco-Tambor tras.</dd></div><div class="sp"><dt>Suspensi├│n</dt><dd>Telesc. / Doble amortiguador</dd></div><div class="sp"><dt>Peso</dt><dd>150 - 170 kg</dd></div><div class="sp"><dt>Tanque</dt><dd>12 - 15 litros</dd></div><div class="sp"><dt>Arranque</dt><dd>El├®ctrico</dd></div></dl>
+        <details class="card-more"><summary>Ver descripci├│n completa</summary><p>Motor: 250cc, 4 tiempos, bicilindrico (en V o paralelo segun version), refrigerado por aire/aceite. Potencia: 17 a 22 HP. Vel. maxima: 110-130 km/h. Transmision: 5 velocidades, final por cadena. Arranque: Electrico. Consumo muy economico: 25-35 km/L. Frenos: Disco delantero / Disco o tambor trasero segun version. Suspension telescopica delantera y doble amortiguador trasero. Capacidad 2 pasajeros. Ideal para uso diario y viajes cortos: excelente relacion precio-calidad y bajo costo de mantenimiento.</p></details>
       </div>
     </div>
   </section>
@@ -441,6 +414,8 @@
 
 <button class="arw prev" id="arwPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 L8 12 L15 19"/></svg></button>
 <button class="arw next" id="arwNext" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5 L16 12 L9 19"/></svg></button>
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp"><svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C5 9.5 9.9 4.9 16 4.9S27 9.5 27 15.1 22.1 24.8 16 24.8z"/><path d="M22.1 18.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp</span></a>
+
 <script src="js/app.js"></script>
 </body>
 </html>
