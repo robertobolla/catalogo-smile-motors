@@ -26,58 +26,55 @@
 <main>
   <h1 class="sr-only">Smile Motors — Catálogo 2026</h1>
   <section class="panel cover" id="inicio" data-screen-label="Portada">
-    <!-- Fondo -->
-    <!-- Capa de humo animada -->
+    <!-- z-index 0: Fondo con grilla y glow -->
+    <div class="cov-bg" aria-hidden="true"></div>
+    <!-- z-index 1: Humo animado bajo -->
     <div class="cov-smoke" aria-hidden="true">
       <div class="smoke-layer s1"></div>
       <div class="smoke-layer s2"></div>
     </div>
-    <div class="cov-inner">
-      <div class="cov-grid">
-        <!-- Columna Izquierda: Título y Slogan -->
-        <div class="cov-copy">
-          <div class="cov-modelos">MODELOS</div>
-          <div class="cov-year">2026</div>
-          <div class="cov-tag">
-            <span>POTENCIA</span><i></i><span>INNOVACIÓN</span><i></i><span>MOVILIDAD</span>
-          </div>
-        </div>
-
-        <!-- Columna Central: Vehículo Protagonista -->
-        <div class="cov-vehicle-container">
-          <div class="cov-hero-halo"></div>
-          <img width="760" height="772" loading="eager" decoding="async" src="assets/img/div01_newpro.png" alt="Scooter eléctrico New Pro" class="cov-hero-img">
-          <div class="cov-hero-shadow"></div>
-        </div>
-
-        <!-- Columna Derecha: Categorías / Sidebar Técnico -->
-        <div class="cov-categories">
-          <div class="cov-cat-line" aria-hidden="true">
-            <div class="cov-cat-node n1"></div>
-            <div class="cov-cat-node n2"></div>
-            <div class="cov-cat-node n3"></div>
-          </div>
-          <div class="cov-cat-list">
-            <button class="cov-cat-item" data-go="sec-01">
-              <span class="cov-cat-num">01</span>
-              <span class="cov-cat-label">MOTOS<br>ELÉCTRICAS</span>
-            </button>
-            <button class="cov-cat-item" data-go="sec-02">
-              <span class="cov-cat-num">02</span>
-              <span class="cov-cat-label">TRICICLOS<br>ELÉCTRICOS</span>
-            </button>
-            <button class="cov-cat-item" data-go="sec-03">
-              <span class="cov-cat-num">03</span>
-              <span class="cov-cat-label">COMBUSTIÓN<br>/ HÍBRIDOS</span>
-            </button>
-          </div>
-        </div>
+    <!-- z-index 2: Bloque de título izquierdo -->
+    <div class="cov-copy">
+      <div class="cov-modelos">MODELOS</div>
+      <div class="cov-year">2026</div>
+      <div class="cov-tag">
+        <span>POTENCIA</span><i></i><span>INNOVACIÓN</span><i></i><span>MOVILIDAD</span>
       </div>
-
-      <!-- Pie de Portada -->
-      <div class="cov-foot">
-        <span class="hz"></span>CATÁLOGO <b>2026</b><span class="hz"></span>
+    </div>
+    <!-- z-index 3: Moto protagonista (UNA SOLA) -->
+    <div class="cov-vehicle-container">
+      <div class="cov-hero-halo"></div>
+      <img width="760" height="772" loading="eager" decoding="async"
+           src="assets/img/div01_newpro.png"
+           alt="Scooter eléctrico New Pro 2026"
+           class="cov-hero-img">
+      <div class="cov-hero-shadow"></div>
+    </div>
+    <!-- z-index 4: Columna derecha de categorías -->
+    <div class="cov-categories">
+      <div class="cov-cat-line" aria-hidden="true">
+        <div class="cov-cat-node n1"></div>
+        <div class="cov-cat-node n2"></div>
+        <div class="cov-cat-node n3"></div>
       </div>
+      <div class="cov-cat-list">
+        <button class="cov-cat-item" data-go="sec-01">
+          <span class="cov-cat-num">01</span>
+          <span class="cov-cat-label">MOTOS<br>ELÉCTRICAS</span>
+        </button>
+        <button class="cov-cat-item" data-go="sec-02">
+          <span class="cov-cat-num">02</span>
+          <span class="cov-cat-label">TRICICLOS<br>ELÉCTRICOS</span>
+        </button>
+        <button class="cov-cat-item" data-go="sec-03">
+          <span class="cov-cat-num">03</span>
+          <span class="cov-cat-label">COMBUSTIÓN<br>/ HÍBRIDOS</span>
+        </button>
+      </div>
+    </div>
+    <!-- z-index 4: Pie inferior centrado -->
+    <div class="cov-foot">
+      <span class="hz"></span>CATÁLOGO <b>2026</b><span class="hz"></span>
     </div>
   </section>
 
