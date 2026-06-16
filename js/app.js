@@ -1,6 +1,4 @@
-/* ===== Smile Motors — Catálogo Web ===== */
-/* >>> REEMPLAZAR por el número real de WhatsApp (formato internacional, sin + ni espacios). Ej: 5491122334455 <<< */
-var WA_NUMBER = "5490000000000";
+
 
 (function(){
   var headerH = 58;
@@ -16,11 +14,6 @@ var WA_NUMBER = "5490000000000";
     else if(p.id.indexOf('sec-') === 0) curNav = p.id;
     p.dataset.nav = curNav;
   });
-
-  // WhatsApp links
-  function setWa(a, msg){ a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg); }
-  document.querySelectorAll('.btn-wa[data-wa]').forEach(function(a){ setWa(a, a.dataset.wa); });
-  setWa(document.getElementById('waFloat'), 'Hola Smile Motors. Estoy viendo el catálogo 2026 y quiero hacer una consulta.');
 
   // navegación
   function go(id){
