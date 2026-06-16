@@ -1,4 +1,4 @@
-﻿/* ============ TOKENS ============ */
+/* ============ TOKENS ============ */
 :root{
   --bg:#0b0b0c; --card:#161618; --card2:#0e0e10;
   --yellow:#f5c400; --yellow2:#f9c911;
@@ -71,16 +71,91 @@ main{display:block}
 .cov-tag{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--f-head);font-weight:700;
   font-size:clamp(15px,2.4vw,30px);letter-spacing:.04em;text-transform:uppercase}
 .cov-tag i{width:9px;height:9px;background:var(--yellow);transform:rotate(45deg)}
-.cov-vehicles{position:relative;display:flex;align-items:center;justify-content:center;min-height:360px}
-.cov-halo{position:absolute;width:84%;aspect-ratio:1.5/1;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(245,196,0,.22),rgba(245,196,0,.05) 50%,transparent 72%);filter:blur(8px)}
-.cov-vehicles img{position:absolute;width:68%;max-width:380px;object-fit:contain;filter:drop-shadow(0 20px 24px rgba(0,0,0,.6));transition:transform .3s ease, z-index .3s}
-.cov-vehicles .v-main{position:relative;z-index:3;width:72%;max-width:410px}
-.cov-vehicles .v-left{left:0;transform:translateX(-10%) scale(.85);z-index:2;filter:brightness(.88) drop-shadow(-10px 14px 20px rgba(0,0,0,.55))}
-.cov-vehicles .v-right{right:0;transform:translateX(10%) scale(.82);z-index:1;filter:brightness(.86) drop-shadow(10px 14px 20px rgba(0,0,0,.55))}
-.cov-vehicles:hover .v-main{transform:translateY(-8px) scale(1.02);z-index:4}
-.cov-vehicles:hover .v-left{transform:translateX(-16%) translateY(-4px) scale(.88) rotate(-2deg);z-index:3}
-.cov-vehicles:hover .v-right{transform:translateX(16%) translateY(-4px) scale(.85) rotate(2deg);z-index:2}
+
+/* --- LINEUP 3 VEHÍCULOS --- */
+.cov-vehicles{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:0;
+  min-height:400px;
+  padding-bottom:18px;
+}
+/* Línea de suelo con glow */
+.cov-vehicles::after{
+  content:"";
+  position:absolute;
+  bottom:16px;left:10%;right:10%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(245,196,0,.35) 30%,rgba(245,196,0,.55) 50%,rgba(245,196,0,.35) 70%,transparent);
+  filter:blur(1px);
+  z-index:0;
+}
+.cov-halo{
+  position:absolute;
+  bottom:10px;left:50%;transform:translateX(-50%);
+  width:70%;aspect-ratio:2.4/1;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(245,196,0,.18),rgba(245,196,0,.04) 55%,transparent 75%);
+  filter:blur(14px);
+  z-index:0;
+}
+/* Cada imagen base */
+.cov-vehicles img{
+  position:relative;
+  object-fit:contain;
+  object-position:bottom center;
+  filter:drop-shadow(0 18px 28px rgba(0,0,0,.65));
+  transition:transform .35s cubic-bezier(.25,.8,.25,1), filter .35s ease;
+  flex-shrink:0;
+}
+/* Moto central: protagonista, más grande */
+.cov-vehicles .v-main{
+  width:42%;
+  max-width:440px;
+  min-width:220px;
+  z-index:3;
+  margin:0 -2%;
+  filter:drop-shadow(0 22px 36px rgba(0,0,0,.7));
+  animation:veh-in-center .7s ease both;
+}
+/* Laterales: visibles, no tapadas */
+.cov-vehicles .v-left{
+  width:33%;
+  max-width:330px;
+  min-width:160px;
+  z-index:2;
+  margin-right:-2%;
+  filter:brightness(.82) saturate(.9) drop-shadow(-8px 16px 22px rgba(0,0,0,.6));
+  animation:veh-in-left .7s .1s ease both;
+}
+.cov-vehicles .v-right{
+  width:33%;
+  max-width:330px;
+  min-width:160px;
+  z-index:2;
+  margin-left:-2%;
+  filter:brightness(.82) saturate(.9) drop-shadow(8px 16px 22px rgba(0,0,0,.6));
+  animation:veh-in-right .7s .1s ease both;
+}
+/* Hover: levanta la moto sobre la que está el cursor */
+.cov-vehicles:hover .v-main{transform:translateY(-10px) scale(1.03)}
+.cov-vehicles:hover .v-left{transform:translateY(-5px) scale(1.02);filter:brightness(.92) saturate(1) drop-shadow(-10px 18px 24px rgba(0,0,0,.55))}
+.cov-vehicles:hover .v-right{transform:translateY(-5px) scale(1.02);filter:brightness(.92) saturate(1) drop-shadow(10px 18px 24px rgba(0,0,0,.55))}
+
+@keyframes veh-in-center{
+  from{opacity:0;transform:translateY(28px) scale(.95)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes veh-in-left{
+  from{opacity:0;transform:translateX(-24px) scale(.92)}
+  to{opacity:1;transform:translateX(0) scale(1)}
+}
+@keyframes veh-in-right{
+  from{opacity:0;transform:translateX(24px) scale(.92)}
+  to{opacity:1;transform:translateX(0) scale(1)}
+}
+
 .cov-index{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ix{display:flex;align-items:center;gap:14px;text-align:left;padding:16px 18px;border-radius:14px;
   background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);transition:.18s}
