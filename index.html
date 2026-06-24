@@ -3,6 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- ============================================================
+     TRACKING — reemplazá los IDs entre <> antes de publicar:
+       GTM-N7JMDMFM        → ID de Google Tag Manager
+       G-R09KVKHD09       → ID de medición de Google Analytics 4
+       1877960819554160      → ID del pixel de Meta (15-16 dígitos)
+     GA4 y Meta Pixel van hardcodeados acá para que funcionen
+     sin configurar nada en GTM. Si preferís manejarlos DENTRO de
+     GTM, borrá esos dos bloques y agregalos como tags en GTM
+     (no los dupliques en ambos lados o vas a contar doble).
+     ============================================================ -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7JMDMFM');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R09KVKHD09"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R09KVKHD09');
+</script>
+<!-- End Google Analytics 4 -->
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1877960819554160');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1877960819554160&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <title>Smile Motors — Catálogo 2026</title>
 <meta name="description" content="Catálogo 2026 Smile Motors · Motos eléctricas, triciclos y combustión.">
 <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
@@ -12,13 +58,17 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7JMDMFM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <header class="nav">
   <a class="brand" href="#inicio" data-go="inicio">
     <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="44" fill="#f5c400"/><circle cx="36" cy="42" r="6" fill="#0b0b0c"/><circle cx="64" cy="42" r="6" fill="#0b0b0c"/><path d="M30 60 Q50 80 70 60" fill="none" stroke="#0b0b0c" stroke-width="6" stroke-linecap="round"/></svg>
     <span class="bt">SMILE MOTORS<small>CATÁLOGO 2026</small></span>
   </a>
   <nav class="nav-links"><button class="nl" data-go="inicio">Inicio</button><button class="nl" data-go="sec-01">Motos Eléctricas</button><button class="nl" data-go="sec-02">Triciclos Eléctricos</button><button class="nl" data-go="sec-03">Combustión</button></nav>
-  <div class="nav-sec" id="navSec">Inicio</div>
+  <a class="nav-cta" href="https://wa.me/17863879972" target="_blank" rel="noopener">Contáctanos</a>
   <button class="burger" id="burger" aria-label="Menú"><i></i><i></i><i></i></button>
 </header>
 <div class="menu" id="menu"><button class="mm" data-go="inicio">Inicio</button><button class="mm" data-go="ofertas"><b>★</b><span>Ofertas Destacadas</span></button><button class="mm" data-go="sec-01"><b>01</b><span>Motos Eléctricas</span></button><button class="mm" data-go="sec-02"><b>02</b><span>Triciclos Eléctricos</span></button><button class="mm" data-go="sec-03"><b>03</b><span>Combustión</span></button></div>
@@ -593,5 +643,16 @@
 
 
 <script src="js/app.js"></script>
+
+<!-- Conversión: click en el botón de WhatsApp -->
+<script>
+  document.querySelector('.wa-btn')?.addEventListener('click', function(){
+    // Meta Pixel: evento Contact (cambiá a 'Lead' si lo preferís como conversión)
+    if (window.fbq) fbq('track', 'Contact');
+    // GA4 (directo + vía GTM por dataLayer)
+    if (window.gtag) gtag('event', 'whatsapp_click', { transport_type: 'beacon' });
+    if (window.dataLayer) dataLayer.push({ event: 'whatsapp_click' });
+  });
+</script>
 </body>
 </html>
