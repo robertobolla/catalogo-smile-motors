@@ -67,7 +67,7 @@
   function setActive(idx){
     current = idx;
     var nav = panels[idx].dataset.nav;
-    navSec.textContent = labelFor(nav);
+    if (navSec) navSec.textContent = labelFor(nav);
     navBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-go') === nav); });
     menuBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-go') === nav); });
     arwPrev.classList.toggle('disabled', idx <= 0);
