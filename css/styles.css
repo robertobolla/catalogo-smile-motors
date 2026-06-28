@@ -281,6 +281,7 @@ main{display:block}
 .of-track::-webkit-scrollbar{display:none}
 .of-track .of-card{flex:0 0 100%;width:100%;scroll-snap-align:start;border-radius:12px}
 .of-dots{display:flex;justify-content:center;gap:7px;margin-top:12px}
+.of-dots:has(span:only-child){display:none}
 .of-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .2s,transform .2s}
 .of-dots span.active{background:var(--yellow);transform:scale(1.2)}
 .of-nav{position:absolute;top:130px;width:36px;height:36px;border-radius:50%;z-index:6;
@@ -327,6 +328,7 @@ main{display:block}
 .of-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
 .of-chips span{font-family:var(--f-head);font-weight:600;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
   color:#cfd1d5;border:1px solid var(--line);border-radius:4px;padding:4px 9px}
+.of-chips span.y{color:var(--yellow);border-color:rgba(245,196,0,.45)}
 .of-price{position:relative;display:flex;flex-direction:column;gap:1px;margin:18px 0;padding:13px 18px;
   background:linear-gradient(180deg,rgba(245,196,0,.12),rgba(245,196,0,.03));
   border:1px solid rgba(245,196,0,.45);border-left:5px solid var(--yellow);border-radius:8px}
@@ -456,6 +458,17 @@ main{display:block}
   /* Nav */
   .brand .bt{font-size:13px;letter-spacing:.10em}
   .brand svg,.brand img{width:26px;height:26px}
+
+  /* Ofertas */
+  .of-media{min-height:180px;padding:32px 8px 12px}
+  .of-main,.of-second{max-width:42%;width:42%}
+  .of-plus{font-size:32px}
+  .of-body{padding:4px 12px 18px}
+  .of-name{font-size:clamp(16px,4.5vw,22px)}
+  .of-val{font-size:clamp(38px,11vw,56px)}
+  .of-chips{gap:4px}
+  .of-chips span{font-size:10px;padding:3px 7px}
+  .of-includes{margin-top:10px}
 
   /* Flechas más compactas */
   .arw{width:44px;height:44px}
