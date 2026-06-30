@@ -1,0 +1,28 @@
+# WebP: servir .webp cuando el browser lo soporta
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_FILENAME}.webp -f
+  RewriteRule ^(assets/img/.+)\.(png|jpg|jpeg)$ $1.webp [T=image/webp,L]
+</IfModule>
+
+# Tipos MIME para WebP
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# Cache de larga duración para assets estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp             "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType image/jpeg             "access plus 1 year"
+  ExpiresByType text/css               "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/x-icon           "access plus 1 day"
+</IfModule>
+
+# Compresión gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+</IfModule>
