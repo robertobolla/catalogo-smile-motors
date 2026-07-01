@@ -1,4 +1,4 @@
-﻿/* ============ TOKENS ============ */
+/* ============ TOKENS ============ */
 :root{
   --bg:#0b0b0c; --card:#161618; --card2:#0e0e10;
   --yellow:#f5c400; --yellow2:#f9c911;
@@ -168,6 +168,7 @@ main{display:block}
 .cov-foot .hz{height:1px;flex:1;max-width:240px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
 
 /* ---- DIVIDER ---- */
+.panel.divider { min-height: auto; padding-top: 80px; padding-bottom: 80px; }
 .dv-num{font-family:var(--f-disp);font-size:clamp(96px,15vw,256px);line-height:.74;color:var(--yellow);margin-bottom:4px}
 .dv-inner{width:100%;max-width:1200px;display:grid;grid-template-columns:0.78fr 1.32fr;gap:20px;align-items:center}
 .dv-text{position:relative;z-index:2}
@@ -185,14 +186,16 @@ main{display:block}
 /* 3-moto layout for divider */
 .dv-veh--3{align-items:flex-end;justify-content:center;padding-bottom:10px}
 .dv-veh--3::after{content:"";position:absolute;bottom:10px;left:5%;right:5%;height:2px;background:linear-gradient(90deg,transparent,rgba(245,196,0,.4) 25%,rgba(245,196,0,.6) 50%,rgba(245,196,0,.4) 75%,transparent);filter:blur(2px);z-index:0}
+.dv-veh--3 picture{display:contents}
 .dv-veh--3 img{width:100%;max-width:none;height:auto;object-fit:contain;object-position:bottom center;display:block;position:relative;z-index:2;flex-shrink:0}
-.dv-veh--3 .dv-v-main{z-index:3;width:56%;max-height:none;filter:drop-shadow(0 18px 34px rgba(0,0,0,.72)) drop-shadow(0 0 28px rgba(245,196,0,.14));align-self:flex-end}
-.dv-veh--3 .dv-v-left{position:absolute;left:0;bottom:10px;width:43%;max-height:320px;filter:brightness(.78) saturate(.88) drop-shadow(-6px 14px 22px rgba(0,0,0,.6))}
-.dv-veh--3 .dv-v-right{position:absolute;right:0;bottom:10px;width:43%;max-height:320px;filter:brightness(.78) saturate(.88) drop-shadow(6px 14px 22px rgba(0,0,0,.6))}
+.dv-veh--3 .dv-v-main{z-index:3;width:55%;max-height:none;filter:drop-shadow(0 18px 34px rgba(0,0,0,.72)) drop-shadow(0 0 28px rgba(245,196,0,.14));align-self:flex-end}
+.dv-veh--3 .dv-v-left{position:absolute;left:10%;bottom:10px;width:40%;max-height:none;filter:brightness(.78) saturate(.88) drop-shadow(-6px 14px 22px rgba(0,0,0,.6))}
+.dv-veh--3 .dv-v-right{position:absolute;right:10%;bottom:10px;width:40%;max-height:none;filter:brightness(.78) saturate(.88) drop-shadow(6px 14px 22px rgba(0,0,0,.6))}
 .dv-veh--icon{align-items:center;justify-content:center}
 .dv-veh--icon svg{width:100%;max-width:360px;height:auto;filter:drop-shadow(0 0 50px rgba(245,196,0,.22))}
 
 /* ---- PRODUCT ---- */
+.panel.product { min-height: auto; padding-top: 20px; padding-bottom: 20px; }
 .pr-inner{width:100%;max-width:1200px;display:grid;grid-template-columns:1.04fr .96fr;gap:36px;align-items:center}
 .pr-media{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px}
 .pr-halo{position:absolute;width:90%;aspect-ratio:1.6/1;border-radius:50%;
@@ -302,11 +305,13 @@ main{display:block}
 .of-badge{position:absolute;top:15px;left:15px;z-index:4;font-family:var(--f-head);font-weight:700;
   letter-spacing:.16em;font-size:11.5px;color:#0b0b0c;background:var(--yellow);padding:6px 12px;border-radius:4px;
   box-shadow:0 4px 12px rgba(245,196,0,.25)}
-.of-media{position:relative;display:flex;align-items:flex-end;justify-content:space-around;gap:10px;padding:40px 16px 20px;min-height:258px}
+.of-media{position:relative;display:flex;align-items:flex-end;justify-content:space-around;gap:10px;padding:40px 16px 20px;min-height:380px}
+.of-media picture { display: contents; }
 .of-halo{position:absolute;width:88%;aspect-ratio:1.7/1;border-radius:50%;
   background:radial-gradient(ellipse,rgba(245,196,0,.15),rgba(245,196,0,.03) 52%,transparent 72%);filter:blur(10px)}
 .of-main, .of-second{position:relative;z-index:2;width:46%;max-width:220px;object-fit:contain;
   filter:drop-shadow(0 14px 20px rgba(0,0,0,.55));transform:none;left:auto;bottom:auto;opacity:1;transition:transform .24s ease}
+.of-card .of-main, .of-card .of-second{width:46%;max-width:300px}
 .of-card:hover .of-main{transform:translateY(-6px) scale(1.03)}
 .of-card:hover .of-second{transform:translateY(-6px) scale(1.03)}
 .of-thumb{position:relative;z-index:2;width:46%;max-width:220px;margin:0;flex-shrink:0;
@@ -380,9 +385,9 @@ main{display:block}
   .dv-veh{order:2;min-height:250px}
   .dv-bar{margin-left:auto;margin-right:auto}
   .dv-num{font-size:clamp(84px,22vw,180px)}
-  .dv-veh--3 .dv-v-main{width:58%}
-  .dv-veh--3 .dv-v-left{width:46%;max-height:280px}
-  .dv-veh--3 .dv-v-right{width:46%;max-height:280px}
+  .dv-veh--3 .dv-v-main{width:70%}
+  .dv-veh--3 .dv-v-left{position:absolute;width:52%;max-height:none;left:0;bottom:10px}
+  .dv-veh--3 .dv-v-right{position:absolute;width:52%;max-height:none;right:0;bottom:10px}
 
   /* Ofertas */
   .of-grid{grid-template-columns:1fr}
@@ -416,6 +421,7 @@ main{display:block}
   /* Ofertas */
   .of-media{min-height:200px;padding:38px 10px 14px}
   .of-main,.of-second{max-width:44%;width:44%}
+  .of-card .of-main,.of-card .of-second{max-width:48%;width:48%}
   .of-thumb{width:44%;max-width:44%}
   .of-plus{font-size:38px}
   .of-body{padding:4px 16px 20px}
@@ -451,9 +457,9 @@ main{display:block}
 
   /* Divider */
   .dv-title{font-size:clamp(36px,9vw,68px)}
-  .dv-veh--3 .dv-v-main{width:64%}
-  .dv-veh--3 .dv-v-left{width:50%;max-height:220px}
-  .dv-veh--3 .dv-v-right{width:50%;max-height:220px}
+  .dv-veh--3 .dv-v-main{width:75%}
+  .dv-veh--3 .dv-v-left{position:absolute;width:58%;max-height:none;left:-2%;bottom:10px}
+  .dv-veh--3 .dv-v-right{position:absolute;width:58%;max-height:none;right:-2%;bottom:10px}
 
   /* Nav */
   .brand .bt{font-size:13px;letter-spacing:.10em}
@@ -462,6 +468,7 @@ main{display:block}
   /* Ofertas */
   .of-media{min-height:180px;padding:32px 8px 12px}
   .of-main,.of-second{max-width:42%;width:42%}
+  .of-card .of-main,.of-card .of-second{max-width:46%;width:46%}
   .of-plus{font-size:32px}
   .of-body{padding:4px 12px 18px}
   .of-name{font-size:clamp(16px,4.5vw,22px)}
@@ -546,20 +553,51 @@ main{display:block}
   .wa-label,.wa-btn::before{animation:none}
 }
 
-/* sec-01 & sec-02: 3 vehículos en fila visible (sin overlap) */
+/* todas las secciones divisoras: 3 elementos en fila visible (sin overlap) — portada */
+#sec-01 .dv-inner,
+#sec-02 .dv-inner,
+#sec-03 .dv-inner,
+#sec-04 .dv-inner{grid-template-columns:1fr 1.2fr}
+#sec-01 .dv-veh,
+#sec-02 .dv-veh,
+#sec-03 .dv-veh,
+#sec-04 .dv-veh{min-height:520px;overflow:visible}
+#sec-01 .dv-veh--3,
+#sec-02 .dv-veh--3,
+#sec-03 .dv-veh--3,
+#sec-04 .dv-veh--3{justify-content:flex-end;gap:6px}
 #sec-01 .dv-veh--3 .dv-v-left,
 #sec-01 .dv-veh--3 .dv-v-right,
 #sec-02 .dv-veh--3 .dv-v-left,
-#sec-02 .dv-veh--3 .dv-v-right{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;max-height:none!important;width:29%}
+#sec-02 .dv-veh--3 .dv-v-right,
+#sec-03 .dv-veh--3 .dv-v-left,
+#sec-03 .dv-veh--3 .dv-v-right,
+#sec-04 .dv-veh--3 .dv-v-left,
+#sec-04 .dv-veh--3 .dv-v-right{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;max-height:none!important;width:30%}
 #sec-01 .dv-veh--3 .dv-v-main,
-#sec-02 .dv-veh--3 .dv-v-main{width:38%}
+#sec-02 .dv-veh--3 .dv-v-main,
+#sec-03 .dv-veh--3 .dv-v-main,
+#sec-04 .dv-veh--3 .dv-v-main{width:38%}
+#sec-01 .dv-veh--3 .dv-v-left,#sec-01 .dv-veh--3 .dv-v-right,
+#sec-02 .dv-veh--3 .dv-v-left,#sec-02 .dv-veh--3 .dv-v-right,
+#sec-03 .dv-veh--3 .dv-v-left,#sec-03 .dv-veh--3 .dv-v-right,
+#sec-04 .dv-veh--3 .dv-v-left,#sec-04 .dv-veh--3 .dv-v-right{filter:drop-shadow(0 14px 22px rgba(0,0,0,.6))}
 @media(max-width:1023px){
-  #sec-01 .dv-veh--3 .dv-v-main,#sec-02 .dv-veh--3 .dv-v-main{width:40%}
+  #sec-01 .dv-inner,#sec-02 .dv-inner,#sec-03 .dv-inner,#sec-04 .dv-inner{grid-template-columns:1fr}
+  #sec-01 .dv-veh--3,#sec-02 .dv-veh--3,#sec-03 .dv-veh--3,#sec-04 .dv-veh--3{justify-content:center}
+  #sec-01 .dv-veh,#sec-02 .dv-veh,#sec-03 .dv-veh,#sec-04 .dv-veh{min-height:280px}
+  #sec-01 .dv-veh--3 .dv-v-main,#sec-02 .dv-veh--3 .dv-v-main,
+  #sec-03 .dv-veh--3 .dv-v-main,#sec-04 .dv-veh--3 .dv-v-main{width:42%}
   #sec-01 .dv-veh--3 .dv-v-left,#sec-01 .dv-veh--3 .dv-v-right,
-  #sec-02 .dv-veh--3 .dv-v-left,#sec-02 .dv-veh--3 .dv-v-right{width:30%}
+  #sec-02 .dv-veh--3 .dv-v-left,#sec-02 .dv-veh--3 .dv-v-right,
+  #sec-03 .dv-veh--3 .dv-v-left,#sec-03 .dv-veh--3 .dv-v-right,
+  #sec-04 .dv-veh--3 .dv-v-left,#sec-04 .dv-veh--3 .dv-v-right{width:30%}
 }
 @media(max-width:480px){
-  #sec-01 .dv-veh--3 .dv-v-main,#sec-02 .dv-veh--3 .dv-v-main{width:44%}
+  #sec-01 .dv-veh--3 .dv-v-main,#sec-02 .dv-veh--3 .dv-v-main,
+  #sec-03 .dv-veh--3 .dv-v-main,#sec-04 .dv-veh--3 .dv-v-main{width:46%}
   #sec-01 .dv-veh--3 .dv-v-left,#sec-01 .dv-veh--3 .dv-v-right,
-  #sec-02 .dv-veh--3 .dv-v-left,#sec-02 .dv-veh--3 .dv-v-right{width:28%}
+  #sec-02 .dv-veh--3 .dv-v-left,#sec-02 .dv-veh--3 .dv-v-right,
+  #sec-03 .dv-veh--3 .dv-v-left,#sec-03 .dv-veh--3 .dv-v-right,
+  #sec-04 .dv-veh--3 .dv-v-left,#sec-04 .dv-veh--3 .dv-v-right{width:30%}
 }
