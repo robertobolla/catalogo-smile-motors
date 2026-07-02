@@ -197,21 +197,16 @@ main{display:block}
 /* ---- PRODUCT ---- */
 .panel.product { min-height: auto; padding-top: 20px; padding-bottom: 20px; }
 .pr-inner{width:100%;max-width:1200px;display:grid;grid-template-columns:1.04fr .96fr;gap:36px;align-items:center}
-.pr-media{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px;background:#000;border-radius:12px}
+.pr-media{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px;padding:24px;overflow:hidden;background:radial-gradient(circle at center, rgba(255, 209, 0, 0.10) 0%, rgba(20, 20, 20, 0.65) 38%, #050505 78%);border-radius:18px}
+.pr-media::after{content:"";position:absolute;bottom:13%;left:50%;width:58%;height:12%;transform:translateX(-50%);background:radial-gradient(ellipse at center, rgba(255, 209, 0, 0.18), rgba(255, 209, 0, 0.00) 70%);filter:blur(18px);opacity:0.65;pointer-events:none}
 .pr-halo{position:absolute;width:90%;aspect-ratio:1.6/1;border-radius:50%;
   background:radial-gradient(ellipse,rgba(245,196,0,.16),rgba(245,196,0,.03) 52%,transparent 72%);filter:blur(10px)}
-.pr-media img{position:relative;width:100%;max-width:600px;object-fit:contain;filter:drop-shadow(0 26px 26px rgba(0,0,0,.6))}
-/* Eliminar fondo blanco/gris de imágenes con fondo incorporado */
-#prod-suzuki-ax100 .pr-media img,#prod-suzuki-125 .pr-media img,
-#prod-lifan-lycan .pr-media img,#prod-simil-supra-180 .pr-media img,
-#prod-simil-supra-200 .pr-media img,#prod-tank-150 .pr-media img,
-#prod-tank-180 .pr-media img,#prod-tank-200 .pr-media img,
-#prod-vittaci-matias .pr-media img,#prod-titan-250 .pr-media img,
-#prod-kratos-tk .pr-media img,#prod-tz-250 .pr-media img,
-#prod-ciber-250 .pr-media img,#prod-batilo-250 .pr-media img,
-#prod-xmox-rr .pr-media img,#prod-xmox-gp .pr-media img,
-#prod-puma-250 .pr-media img,#prod-kreston-250 .pr-media img,
-#prod-ava-mustang .pr-media img{filter:url(#rm-bg) drop-shadow(0 20px 30px rgba(0,0,0,.8))}
+.pr-media img{position:relative;z-index:2;max-width:92%;max-height:88%;width:auto;height:auto;object-fit:contain;transform:scale(1.12);filter:brightness(1.08) contrast(1.12) saturate(1.05) drop-shadow(0 28px 40px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 22px rgba(255, 209, 0, 0.08))}
+/* SVG filter rule removed for better image quality */
+#prod-suzuki-ax100 .pr-media img {
+  mix-blend-mode: screen;
+  filter: brightness(1.1) contrast(1.1) saturate(1.1); /* Drop-shadow removed because screen mode blends the box */
+}
 .img-ph{position:relative;width:100%;max-width:520px;aspect-ratio:1.55/1;border:1.5px dashed var(--line);border-radius:16px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--muted)}
 .img-ph svg{width:78px;height:78px;color:var(--yellow);opacity:.7}
@@ -406,8 +401,8 @@ main{display:block}
 
   /* Productos */
   .pr-inner{grid-template-columns:1fr;gap:16px}
-  .pr-media{order:1;min-height:260px}
-  .pr-media img{max-width:440px;margin:0 auto}
+  .pr-media{order:1;min-height:380px;padding:18px}
+  .pr-media img{max-width:94%;max-height:88%;margin:0 auto;transform:scale(1.08)}
   .pr-card{order:2;padding:22px 20px}
   .card-specs{grid-template-columns:1fr 1fr}
 
@@ -460,8 +455,8 @@ main{display:block}
 
   /* Producto */
   .pr-title{font-size:clamp(24px,7vw,32px)}
-  .pr-media{min-height:210px}
-  .pr-media img{max-width:300px}
+  .pr-media{min-height:340px;padding:14px}
+  .pr-media img{max-width:96%;max-height:90%;transform:scale(1.05)}
   .pr-card{padding:18px 16px}
   .pr-price{padding:7px 14px}
   .pc-val{font-size:23px}
@@ -612,3 +607,5 @@ main{display:block}
   #sec-03 .dv-veh--3 .dv-v-left,#sec-03 .dv-veh--3 .dv-v-right,
   #sec-04 .dv-veh--3 .dv-v-left,#sec-04 .dv-veh--3 .dv-v-right{width:30%}
 }
+
+.suzuki-fix { mix-blend-mode: multiply; filter: brightness(1.2) contrast(1.1); }
