@@ -629,7 +629,7 @@ main{display:block}
 
 .suzuki-fix { mix-blend-mode: multiply; filter: brightness(1.2) contrast(1.1); }
 
-/* Aumentar tama�o de motos de combusti�n */
+/* Aumentar tama�o de motos de combusti�n */
 #prod-simil-supra-180 .pr-media img,
 #prod-simil-supra-200 .pr-media img,
 #prod-tank-150 .pr-media img,
@@ -649,12 +649,39 @@ main{display:block}
   transform: scale(1.22);
 }
 
-/* Aumentar separador seccion 03 */
-#sec-03 .dv-veh--3 .dv-v-main { transform: scale(1.8); transform-origin: bottom center; }
-#sec-03 .dv-veh--3 .dv-v-left { transform: scale(1.4); transform-origin: bottom right; margin-right: 20px; }
-#sec-03 .dv-veh--3 .dv-v-right { transform: scale(1.4); transform-origin: bottom left; margin-left: 20px; }
+/* Aumentar separador seccion 03 — solo desktop */
+@media(min-width:1024px){
+  #sec-03 .dv-veh--3 .dv-v-main { transform: scale(1.8); transform-origin: bottom center; }
+  #sec-03 .dv-veh--3 .dv-v-left { transform: scale(1.4); transform-origin: bottom right; margin-right: 20px; }
+  #sec-03 .dv-veh--3 .dv-v-right { transform: scale(1.4); transform-origin: bottom left; margin-left: 20px; }
 
-/* Aumentar separador seccion 01 */
-#sec-01 .dv-veh--3 .dv-v-main { transform: scale(1.6); transform-origin: bottom center; }
-#sec-01 .dv-veh--3 .dv-v-left { transform: scale(1.3); transform-origin: bottom right; margin-right: 20px; }
-#sec-01 .dv-veh--3 .dv-v-right { transform: scale(1.3); transform-origin: bottom left; margin-left: 20px; }
+  /* Aumentar separador seccion 01 — solo desktop */
+  #sec-01 .dv-veh--3 .dv-v-main { transform: scale(1.6); transform-origin: bottom center; }
+  #sec-01 .dv-veh--3 .dv-v-left { transform: scale(1.3); transform-origin: bottom right; margin-right: 20px; }
+  #sec-01 .dv-veh--3 .dv-v-right { transform: scale(1.3); transform-origin: bottom left; margin-left: 20px; }
+}
+
+/* ===== MOBILE BANNER — más grandes, asimétricos, sin overlap ===== */
+@media(max-width:1023px){
+  /* Contenedor más alto para dar respiro a las imágenes */
+  #sec-01 .dv-veh,#sec-02 .dv-veh,#sec-03 .dv-veh,#sec-04 .dv-veh{min-height:340px}
+
+  /* Imágenes más grandes: centro 46%, laterales 25% → 96% total + gap caben sin overflow */
+  #sec-01 .dv-veh--3 .dv-v-main,#sec-02 .dv-veh--3 .dv-v-main,
+  #sec-03 .dv-veh--3 .dv-v-main,#sec-04 .dv-veh--3 .dv-v-main{width:46%;flex-shrink:0}
+
+  #sec-01 .dv-veh--3 .dv-v-left,#sec-01 .dv-veh--3 .dv-v-right,
+  #sec-02 .dv-veh--3 .dv-v-left,#sec-02 .dv-veh--3 .dv-v-right,
+  #sec-03 .dv-veh--3 .dv-v-left,#sec-03 .dv-veh--3 .dv-v-right,
+  #sec-04 .dv-veh--3 .dv-v-left,#sec-04 .dv-veh--3 .dv-v-right{width:25%;flex-shrink:0}
+
+  /* Asimetría: izquierda sube más, derecha sube a medias, centro grounded */
+  #sec-01 .dv-veh--3 .dv-v-left,#sec-02 .dv-veh--3 .dv-v-left,
+  #sec-03 .dv-veh--3 .dv-v-left,#sec-04 .dv-veh--3 .dv-v-left{transform:translateY(-30px)}
+
+  #sec-01 .dv-veh--3 .dv-v-right,#sec-02 .dv-veh--3 .dv-v-right,
+  #sec-03 .dv-veh--3 .dv-v-right,#sec-04 .dv-veh--3 .dv-v-right{transform:translateY(-14px)}
+
+  /* Gap más compacto para aprovechar el ancho */
+  #sec-01 .dv-veh--3,#sec-02 .dv-veh--3,#sec-03 .dv-veh--3,#sec-04 .dv-veh--3{gap:4px}
+}
