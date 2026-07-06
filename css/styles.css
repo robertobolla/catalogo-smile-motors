@@ -215,9 +215,17 @@ main{display:block}
   text-transform:uppercase;letter-spacing:.005em}
 .pr-title span{display:block}
 .pr-title span.y{color:var(--yellow)}
+.pr-bulk-badge{display:inline-flex;align-items:center;font-family:var(--f-head);font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#0b0b0c;background:var(--yellow);
+  padding:7px 15px;border-radius:999px;margin-bottom:12px;box-shadow:0 4px 14px rgba(245,196,0,.32)}
 .pr-price{display:inline-flex;align-items:baseline;gap:10px;background:rgba(245,196,0,.12);
   border:1px solid rgba(245,196,0,.4);border-radius:10px;padding:9px 16px;margin-bottom:20px;
   box-shadow:0 4px 18px rgba(245,196,0,.18)}
+.pr-unit-price{display:inline-flex;align-items:baseline;gap:9px;margin:-10px 0 20px;padding:8px 16px;
+  border:1px dashed var(--line);border-radius:10px;background:rgba(255,255,255,.03)}
+.pr-unit-price .pc-lbl{font-size:12px}
+.pr-unit-price .pc-val-unit{font-family:var(--f-head);font-weight:700;font-size:17px;color:#fff}
+.pr-unit-price .pc-unit-suffix{font-size:12.5px;color:var(--muted)}
 .pc-lbl{font-family:var(--f-head);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--muted)}
 .pc-val{font-family:var(--f-head);font-weight:800;font-size:clamp(21px,2.9vw,29px);color:var(--yellow);
   text-shadow:0 0 12px rgba(245,196,0,.55),0 2px 4px rgba(0,0,0,.4)}
