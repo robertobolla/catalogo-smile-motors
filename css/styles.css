@@ -101,13 +101,7 @@ main{display:block}
   z-index:0;
 }
 .cov-halo{
-  position:absolute;
-  bottom:0;left:50%;transform:translateX(-50%);
-  width:72%;aspect-ratio:3/1;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(245,196,0,.15),rgba(245,196,0,.03) 55%,transparent 75%);
-  filter:blur(18px);
-  z-index:0;
-  pointer-events:none;
+  display: none;
 }
 /* Imagen base â€” cada una ocupa su celda */
 .cov-vehicles img{
@@ -184,8 +178,7 @@ main{display:block}
   text-transform:uppercase;color:var(--muted)}
 .dv-sec b{color:var(--yellow)}
 .dv-veh{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px}
-.dv-halo{position:absolute;width:88%;aspect-ratio:1.5/1;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(245,196,0,.20),rgba(245,196,0,.04) 52%,transparent 72%);filter:blur(8px)}
+.dv-halo{display:none}
 .dv-veh img{position:relative;width:100%;max-width:600px;object-fit:contain;filter:drop-shadow(0 26px 28px rgba(0,0,0,.6))}
 /* 3-moto layout for divider */
 .dv-veh--3{align-items:flex-end;justify-content:center;padding-bottom:10px}
@@ -201,11 +194,10 @@ main{display:block}
 /* ---- PRODUCT ---- */
 .panel.product { min-height: auto; padding-top: calc(var(--h) + 20px); padding-bottom: calc(80px + env(safe-area-inset-bottom,0px)); }
 .pr-inner{width:100%;max-width:1200px;display:grid;grid-template-columns:1.04fr .96fr;gap:36px;align-items:center}
-.pr-media{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px;padding:24px;overflow:hidden;background:radial-gradient(circle at center, rgba(255, 209, 0, 0.10) 0%, rgba(20, 20, 20, 0.65) 38%, #050505 78%);border-radius:18px}
-.pr-media::after{content:"";position:absolute;bottom:13%;left:50%;width:58%;height:12%;transform:translateX(-50%);background:radial-gradient(ellipse at center, rgba(255, 209, 0, 0.18), rgba(255, 209, 0, 0.00) 70%);filter:blur(18px);opacity:0.65;pointer-events:none}
-.pr-halo{position:absolute;width:90%;aspect-ratio:1.6/1;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(245,196,0,.16),rgba(245,196,0,.03) 52%,transparent 72%);filter:blur(10px)}
-.pr-media img{position:relative;z-index:2;max-width:92%;max-height:88%;width:auto;height:auto;object-fit:contain;transform:scale(1.12);filter:brightness(1.08) contrast(1.12) saturate(1.05) drop-shadow(0 28px 40px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 22px rgba(255, 209, 0, 0.08))}
+.pr-media{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px;padding:24px;overflow:visible;background:none;border-radius:18px}
+.pr-media::after{display:none}
+.pr-halo{display:none}
+.pr-media img{position:relative;z-index:2;max-width:92%;max-height:88%;width:auto;height:auto;object-fit:contain;filter:brightness(1.08) contrast(1.12) saturate(1.05) drop-shadow(0 28px 40px rgba(0, 0, 0, 0.75))}
 /* SVG filter rule removed for better image quality */
 #prod-suzuki-ax100 .pr-media img {
   mix-blend-mode: screen;
@@ -317,8 +309,7 @@ main{display:block}
   box-shadow:0 4px 12px rgba(245,196,0,.25)}
 .of-media{position:relative;display:flex;align-items:flex-end;justify-content:space-around;gap:10px;padding:40px 16px 20px;min-height:380px}
 .of-media picture { display: contents; }
-.of-halo{position:absolute;width:88%;aspect-ratio:1.7/1;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(245,196,0,.15),rgba(245,196,0,.03) 52%,transparent 72%);filter:blur(10px)}
+.of-halo{display:none}
 .of-main, .of-second{position:relative;z-index:2;width:46%;max-width:220px;object-fit:contain;
   filter:drop-shadow(0 14px 20px rgba(0,0,0,.55));transform:none;left:auto;bottom:auto;opacity:1;transition:transform .24s ease}
 .of-card .of-main, .of-card .of-second{width:46%;max-width:300px}
@@ -637,3 +628,33 @@ main{display:block}
 }
 
 .suzuki-fix { mix-blend-mode: multiply; filter: brightness(1.2) contrast(1.1); }
+
+/* Aumentar tamaño de motos de combustión */
+#prod-simil-supra-180 .pr-media img,
+#prod-simil-supra-200 .pr-media img,
+#prod-tank-150 .pr-media img,
+#prod-tank-180 .pr-media img,
+#prod-tank-200 .pr-media img,
+#prod-vittaci-matias .pr-media img,
+#prod-titan-250 .pr-media img,
+#prod-kratos-tk .pr-media img,
+#prod-tz-250 .pr-media img,
+#prod-ciber-250 .pr-media img,
+#prod-batilo-250 .pr-media img,
+#prod-xmox-rr .pr-media img,
+#prod-xmox-gp .pr-media img,
+#prod-puma-250 .pr-media img,
+#prod-kreston-250 .pr-media img,
+#prod-ava-mustang .pr-media img {
+  transform: scale(1.22);
+}
+
+/* Aumentar separador seccion 03 */
+#sec-03 .dv-veh--3 .dv-v-main { transform: scale(1.8); transform-origin: bottom center; }
+#sec-03 .dv-veh--3 .dv-v-left { transform: scale(1.4); transform-origin: bottom right; margin-right: 20px; }
+#sec-03 .dv-veh--3 .dv-v-right { transform: scale(1.4); transform-origin: bottom left; margin-left: 20px; }
+
+/* Aumentar separador seccion 01 */
+#sec-01 .dv-veh--3 .dv-v-main { transform: scale(1.6); transform-origin: bottom center; }
+#sec-01 .dv-veh--3 .dv-v-left { transform: scale(1.3); transform-origin: bottom right; margin-right: 20px; }
+#sec-01 .dv-veh--3 .dv-v-right { transform: scale(1.3); transform-origin: bottom left; margin-left: 20px; }
