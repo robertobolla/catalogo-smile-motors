@@ -663,8 +663,8 @@ main{display:block}
 
 /* ===== MOBILE BANNER — más grandes, asimétricos, sin overlap ===== */
 @media(max-width:1023px){
-  /* Contenedor más alto para dar respiro a las imágenes */
-  #sec-01 .dv-veh,#sec-02 .dv-veh,#sec-03 .dv-veh,#sec-04 .dv-veh{min-height:340px}
+  /* Contenedor: sin altura mínima forzada para no generar espacio vacío */
+  #sec-01 .dv-veh,#sec-02 .dv-veh,#sec-03 .dv-veh,#sec-04 .dv-veh{min-height:0;height:auto}
 
   /* Imágenes más grandes: centro 46%, laterales 25% → 96% total + gap caben sin overflow */
   #sec-01 .dv-veh--3 .dv-v-main,#sec-02 .dv-veh--3 .dv-v-main,
@@ -684,4 +684,8 @@ main{display:block}
 
   /* Gap más compacto para aprovechar el ancho */
   #sec-01 .dv-veh--3,#sec-02 .dv-veh--3,#sec-03 .dv-veh--3,#sec-04 .dv-veh--3{gap:4px}
+
+  /* Padding inferior del panel divider reducido en mobile */
+  #sec-01.panel.divider,#sec-02.panel.divider,
+  #sec-03.panel.divider,#sec-04.panel.divider{padding-bottom:100px}
 }
