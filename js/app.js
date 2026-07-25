@@ -11,6 +11,7 @@
   panels.forEach(function(p){
     if(p.id === 'inicio') curNav = 'inicio';
     else if(p.id === 'ofertas') curNav = 'ofertas';
+    else if(p.id === 'newsletter') curNav = 'newsletter';
     else if(p.id.indexOf('sec-') === 0) curNav = p.id;
     p.dataset.nav = curNav;
   });
@@ -51,23 +52,16 @@
   function closeMenu(){ menu.classList.remove('open'); burger.classList.remove('x'); }
   burger.addEventListener('click', function(){ menu.classList.toggle('open'); burger.classList.toggle('x'); });
 
-  // indicador de sección + nav activa + flechas
-  var navSec = document.getElementById('navSec');
+  // nav activa + flechas
   var navBtns = Array.prototype.slice.call(document.querySelectorAll('.nl'));
   var menuBtns = Array.prototype.slice.call(document.querySelectorAll('.mm'));
   var arwPrev = document.getElementById('arwPrev');
   var arwNext = document.getElementById('arwNext');
   var current = 0;
 
-  function labelFor(nav){
-    if(nav === 'inicio') return 'Inicio';
-    var btn = navBtns.filter(function(b){ return b.getAttribute('data-go') === nav; })[0];
-    return btn ? btn.textContent : 'Inicio';
-  }
   function setActive(idx){
     current = idx;
     var nav = panels[idx].dataset.nav;
-    if (navSec) navSec.textContent = labelFor(nav);
     navBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-go') === nav); });
     menuBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-go') === nav); });
     arwPrev.classList.toggle('disabled', idx <= 0);
@@ -138,4 +132,47 @@
     });
     setActive(0);
   });
+
+  // newsletter: suscripción al endpoint de la plataforma de marketing (Supabase)
+  var nlForm = document.getElementById('nlForm');
+  if(nlForm){
+    var NL_ENDPOINT = 'https://marketing.smilemotors.online/api/newsletter';
+    var nlMsg = document.getElementById('nlMsg');
+    var nlBtn = nlForm.querySelector('.nl-btn');
+    nlForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = (nlForm.email.value || '').trim();
+      var website = nlForm.website.value || ''; // honeypot
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        nlMsg.className = 'nl-msg err';
+        nlMsg.textContent = 'Ingresá un email válido.';
+        return;
+      }
+      nlBtn.disabled = true;
+      nlMsg.className = 'nl-msg';
+      nlMsg.textContent = 'Enviando…';
+      fetch(NL_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, website: website })
+      }).then(function(res){
+        if(res.ok){
+          nlMsg.className = 'nl-msg ok';
+          nlMsg.textContent = '¡Listo! Quedaste suscripto. 🎉';
+          nlForm.reset();
+          if(window.fbq) fbq('track', 'Lead');
+          if(window.gtag) gtag('event', 'newsletter_signup', { transport_type: 'beacon' });
+          if(window.dataLayer) dataLayer.push({ event: 'newsletter_signup' });
+        } else {
+          nlMsg.className = 'nl-msg err';
+          nlMsg.textContent = 'No pudimos suscribirte. Probá de nuevo.';
+        }
+      }).catch(function(){
+        nlMsg.className = 'nl-msg err';
+        nlMsg.textContent = 'Error de conexión. Probá de nuevo.';
+      }).finally(function(){
+        nlBtn.disabled = false;
+      });
+    });
+  }
 })();
