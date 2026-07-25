@@ -706,7 +706,7 @@ main{display:block}
 .nl-sub b{color:#fff;font-weight:600}
 .nl-form{width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .nl-row{width:100%;display:flex;gap:10px}
-.nl-input{flex:1;min-width:0;height:54px;padding:0 18px;border-radius:12px;background:var(--card);
+.nl-input{-webkit-appearance:none;appearance:none;flex:1;min-width:0;height:54px;padding:0 18px;border-radius:12px;background:var(--card);
   border:1px solid var(--line);color:#fff;font-family:var(--f-cond);font-size:17px;outline:none;
   transition:border-color .18s,box-shadow .18s}
 .nl-input::placeholder{color:#6b6d72}
@@ -725,6 +725,7 @@ main{display:block}
 @media (max-width:560px){
   .newsletter{padding-top:calc(var(--h) + 40px)}
   .nl-row{flex-direction:column;gap:20px}
-  .nl-input{height:90px}
+  .nl-input{flex:0 0 auto;height:45px}
   .nl-btn{width:100%}
+  .nl-fine{margin-top:8px}
 }
