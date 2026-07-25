@@ -723,7 +723,8 @@ main{display:block}
 .nl-msg.err{color:#ff6b6b}
 .nl-fine{margin:-8px 0 0;font-family:var(--f-cond);font-size:13px;color:#6b6d72}
 @media (max-width:560px){
-  .nl-row{flex-direction:column;gap:14px}
-  .nl-input{height:60px}
+  .newsletter{padding-top:calc(var(--h) + 40px)}
+  .nl-row{flex-direction:column;gap:20px}
+  .nl-input{height:90px}
   .nl-btn{width:100%}
 }
