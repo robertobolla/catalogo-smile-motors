@@ -154,7 +154,7 @@
       fetch(NL_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, website: website })
+        body: JSON.stringify({ email: email, website: website, site: 'catalogo-smile-motors' })
       }).then(function(res){
         if(res.ok){
           nlMsg.className = 'nl-msg ok';
