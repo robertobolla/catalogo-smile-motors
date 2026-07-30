@@ -7,10 +7,10 @@ Sitio estático (HTML + CSS + JS, sin build step). Se abre directamente con `ind
 El repo mantiene dos versiones del mismo sitio. La **única** diferencia entre ellas son los
 puntos de contacto: el botón "Contáctanos" del header y el botón flotante de WhatsApp.
 
-| Branch    | Versión                          | Destino                        |
-| --------- | -------------------------------- | ------------------------------ |
-| `main`    | Sin datos de contacto            | `catalogo.smilemotors.online`  |
-| `oficial` | Con contacto (WhatsApp) — como estaba antes | Página oficial      |
+| Branch    | Versión                                     | Destino                       |
+| --------- | ------------------------------------------- | ----------------------------- |
+| `main`    | Sin datos de contacto                       | `catalogo.smilemotors.online` |
+| `oficial` | Con contacto (WhatsApp) — como estaba antes | `smilemotors.online`          |
 
 Lo que cambia entre branches:
 
@@ -38,8 +38,15 @@ justo esas líneas.
 Cada versión se publica como un proyecto de Vercel distinto, apuntando al mismo repo pero
 con distinta *Production Branch*:
 
+- Proyecto oficial → Production Branch `oficial` → dominio `smilemotors.online` (apex)
 - Proyecto del catálogo → Production Branch `main` → dominio `catalogo.smilemotors.online`
-- Proyecto oficial → Production Branch `oficial` → dominio de la página oficial
+
+DNS del dominio está en Hostinger (`ns1/ns2.dns-parking.com`). Registros que necesita Vercel:
+
+| Tipo    | Nombre     | Valor                   |
+| ------- | ---------- | ----------------------- |
+| `A`     | `@`        | `216.150.1.1`           |
+| `CNAME` | `catalogo` | `cname.vercel-dns.com`  |
 
 > Nota: el archivo `_headers` usa sintaxis de Cloudflare Pages / Netlify y Vercel lo ignora.
 > `.htaccess` solo aplica en hosting Apache. En Vercel, las cabeceras de cache se configuran
