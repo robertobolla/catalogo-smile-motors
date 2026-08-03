@@ -4,19 +4,23 @@ Sitio estático (HTML + CSS + JS, sin build step). Se abre directamente con `ind
 
 ## Dos versiones = dos branches
 
-El repo mantiene dos versiones del mismo sitio. La **única** diferencia entre ellas son los
-puntos de contacto: el botón "Contáctanos" del header y el botón flotante de WhatsApp.
+El repo mantiene dos versiones del mismo sitio. Las diferencias son los puntos de contacto
+—el botón "Contáctanos" del header y el botón flotante de WhatsApp— y el panel de newsletter.
+Las tres cosas existen **solo en `oficial`**.
 
-| Branch    | Versión                                     | Destino                       |
-| --------- | ------------------------------------------- | ----------------------------- |
-| `main`    | Sin datos de contacto                       | `catalogo.smilemotors.online` |
-| `oficial` | Con contacto (WhatsApp) — como estaba antes | `smilemotors.online`          |
+| Branch    | Versión                              | Destino                       |
+| --------- | ------------------------------------ | ----------------------------- |
+| `main`    | Catálogo puro: sin contacto ni newsletter | `catalogo.smilemotors.online` |
+| `oficial` | Con contacto (WhatsApp) y newsletter | `smilemotors.online` + `www`  |
 
 Lo que cambia entre branches:
 
-- `index.html` — el `<a class="nav-cta">` del header, el bloque `<div class="wa-wrap">` flotante
-  y el script de tracking del click de WhatsApp (Meta Pixel `Contact` + evento GA4 `whatsapp_click`).
-- `css/styles.css` — las reglas `.nav-cta` y el bloque `/* WHATSAPP BTN */`.
+- `index.html` — el `<a class="nav-cta">` del header, el bloque `<div class="wa-wrap">` flotante,
+  el script de tracking del click de WhatsApp (Meta Pixel `Contact` + evento GA4
+  `whatsapp_click`), la `<section class="panel newsletter">` y su item en el `.menu`.
+- `css/styles.css` — las reglas `.nav-cta`, el bloque `/* WHATSAPP BTN */` y el bloque
+  `/* NEWSLETTER */`.
+- `js/app.js` — el handler de suscripción (`#nlForm`) y el mapeo de nav del panel newsletter.
 
 ## Cómo trabajar con las dos
 
@@ -29,9 +33,16 @@ git merge main
 git checkout main
 ```
 
-El merge no toca los elementos de contacto: viven solo en `oficial` y no existen en `main`,
-así que se conservan solos. Si alguna vez hay conflicto, es señal de que un cambio tocó
-justo esas líneas.
+El merge no toca los elementos exclusivos de `oficial` (contacto y newsletter): viven solo
+ahí y no existen en `main`, así que se conservan solos.
+
+Si hay conflicto, es señal de que un cambio tocó justo esas líneas. El caso típico es el
+`?v=` de `css/styles.css` y `js/app.js`, que está pegado a los bloques exclusivos: se resuelve
+conservando el bloque de `oficial` y llevándole el `?v=` nuevo de `main`.
+
+> Importante: nunca borres en `main` algo que tenga que seguir viviendo en `oficial`. Si lo
+> hacés, el próximo merge se lo lleva. Lo que sea exclusivo de `oficial` tiene que ser un
+> **agregado** de esa branch, no una ausencia en `main`.
 
 ## Deploy (Vercel)
 

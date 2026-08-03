@@ -3,3 +3,4 @@ package.json
 package-lock.json
 convert-webp.js
 wrap-picture.js
+.claude/
