@@ -28,9 +28,13 @@ const fadeInUp = {
  *
  * El amarillo va de fondo y nunca de texto: #f5c400 sobre blanco da 2,4:1 y no
  * se lee, pero con texto ink encima pasa de 10:1.
+ *
+ * En el celular va compacta (menos padding, letra más chica, sin tracking) y
+ * con el nombre corto de la categoría: así las cinco entran en un solo renglón
+ * y no hay que deslizar para descubrir que existe "Energía Solar".
  */
 const pillClass = (active: boolean) =>
-  `shrink-0 rounded-xl border px-4 py-2.5 font-head text-xs font-bold uppercase tracking-widest transition-colors ${
+  `shrink-0 rounded-lg border px-2 py-1.5 font-head text-[10px] font-bold uppercase transition-colors sm:rounded-xl sm:px-4 sm:py-2.5 sm:text-xs sm:tracking-widest ${
     active
       ? 'border-brand bg-brand text-ink shadow-[0_6px_18px_-6px_rgba(245,196,0,0.7)]'
       : 'border-zinc-200 bg-white text-zinc-600 hover:border-brand hover:text-zinc-900'
@@ -66,7 +70,10 @@ export const CatalogPage = () => {
     // (recortes sin fondo) se leen enteras en vez de fundirse con el negro.
     <div className="min-h-screen bg-zinc-50 px-6 pb-24 pt-28 text-zinc-900">
       <div className="mx-auto max-w-7xl">
-        <header className="mb-10">
+        {/* El margen chico en celular es lo que pega el filtro al título: ahí
+            la pantalla es toda vertical y 40px de aire antes de la barra son
+            40px menos de catálogo. En desktop el aire sí sobra. */}
+        <header className="mb-4 sm:mb-10">
           <span className="mb-3 block font-head text-xs font-bold uppercase tracking-[0.35em] text-brand-ink">
             Smile Motors · 2026
           </span>
@@ -99,9 +106,9 @@ export const CatalogPage = () => {
             del navbar (z-50) y del menú mobile (z-40), y por encima de las
             tarjetas. El `-mx-6` compensa el padding de la página para que el
             fondo tape de borde a borde y las fotos no asomen por los costados. */}
-        <div className="sticky top-16 z-30 -mx-6 mb-8 flex items-center gap-2 border-b border-zinc-200/70 bg-zinc-50/90 px-6 py-3 backdrop-blur-md sm:gap-3 sm:py-4">
+        <div className="sticky top-16 z-30 -mx-6 mb-8 flex flex-col gap-1 border-b border-zinc-200/70 bg-zinc-50/90 px-6 pb-3 pt-1.5 backdrop-blur-md sm:flex-row sm:items-center sm:gap-3 sm:py-4">
           <nav
-            className="no-scrollbar flex min-w-0 flex-1 gap-2 overflow-x-auto pb-1"
+            className="no-scrollbar flex min-w-0 flex-wrap gap-1 sm:flex-1 sm:flex-nowrap sm:gap-2 sm:overflow-x-auto sm:pb-1"
             aria-label="Categorías"
           >
             <Link to="/catalogo" aria-current={!category ? 'page' : undefined} className={pillClass(!category)}>
@@ -114,21 +121,24 @@ export const CatalogPage = () => {
                 aria-current={category === c.slug ? 'page' : undefined}
                 className={pillClass(category === c.slug)}
               >
-                {c.label}
+                <span className="sm:hidden">{c.short}</span>
+                <span className="hidden sm:inline">{c.label}</span>
               </Link>
             ))}
           </nav>
 
           {/* Orden. Sin catálogo no hay nada que ordenar, así que el control no
               se renderiza. No alcanza con taparlo por clase: `hidden` y `flex`
-              son los dos display y en Tailwind gana el que salga último. */}
+              son los dos display y en Tailwind gana el que salga último.
+
+              En el celular va en su propio renglón, arriba de las categorías y
+              en chico. El `order` es solo para el mobile: de `sm` para arriba
+              la barra vuelve a ser una fila y manda el orden del DOM, que deja
+              las píldoras a la izquierda y el orden a la derecha. */}
           {products.length > 0 && (
-            <div className="flex shrink-0 items-center gap-2 pb-1">
-              {/* En el celular el ícono se oculta: es decoración y ahí cada
-                  píxel de ancho se lo pelean las píldoras. El estado "ordenado
-                  por precio" igual se ve en el borde amarillo del select. */}
+            <div className="order-first flex shrink-0 items-center gap-1.5 sm:order-none sm:gap-2 sm:pb-1">
               <SlidersHorizontal
-                className={`hidden h-4 w-4 shrink-0 transition-colors sm:block ${sort === 'destacados' ? 'text-zinc-400' : 'text-brand-ink'}`}
+                className={`h-3.5 w-3.5 shrink-0 transition-colors sm:h-4 sm:w-4 ${sort === 'destacados' ? 'text-zinc-400' : 'text-brand-ink'}`}
               />
               <label htmlFor="sort" className="sr-only">
                 Ordenar por
@@ -140,7 +150,7 @@ export const CatalogPage = () => {
                 id="sort"
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortKey)}
-                className={`cursor-pointer rounded-xl border px-2.5 py-2.5 font-head text-xs font-bold uppercase tracking-widest text-zinc-900 outline-none transition-colors focus:border-brand sm:px-3.5 ${
+                className={`cursor-pointer rounded-lg border px-1.5 py-1 font-head text-[10px] font-bold uppercase tracking-wide text-zinc-900 outline-none transition-colors focus:border-brand sm:rounded-xl sm:px-3.5 sm:py-2.5 sm:text-xs sm:tracking-widest ${
                   sort === 'destacados' ? 'border-zinc-200 bg-white' : 'border-brand bg-brand/10'
                 }`}
               >
