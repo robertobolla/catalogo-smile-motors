@@ -1,64 +1,109 @@
-# Catálogo Smile Motors 2026
+# Smile Motors — Catálogo 2026
 
-Sitio estático (HTML + CSS + JS, sin build step). Se abre directamente con `index.html`.
+Catálogo de Smile Motors. Vite + React 19 + React Router + Tailwind 4.
 
-## Dos versiones = dos branches
+Sale de una copia de `../tienda`, a la que se le sacó todo lo que abría una
+conversación. **Esa es la regla del proyecto y conviene leerla antes de tocar
+nada:**
 
-El repo mantiene dos versiones del mismo sitio. Las diferencias son los puntos de contacto
-—el botón "Contáctanos" del header y el botón flotante de WhatsApp— y el panel de newsletter.
-Las tres cosas existen **solo en `oficial`**.
+> Este sitio **no ofrece ningún canal de contacto**. No hay teléfono, ni correo,
+> ni WhatsApp, ni redes, ni chat, ni formulario, ni carrito. Se entra, se miran
+> modelos y precios, y se sale.
 
-| Branch    | Versión                              | Destino                       |
-| --------- | ------------------------------------ | ----------------------------- |
-| `main`    | Catálogo puro: sin contacto ni newsletter | `catalogo.smilemotors.online` |
-| `oficial` | Con contacto (WhatsApp) y newsletter | `smilemotors.online` + `www`  |
+**Por qué:** cada vendedor manda este enlace a sus propios clientes. El cliente
+tiene que poder mirar el catálogo entero y no encontrar ninguna otra forma de
+seguir la compra: la venta vuelve por donde vino, al vendedor que se lo mandó.
+Un solo teléfono o correo publicado acá le da al cliente una vía directa a la
+empresa y le saca la venta al vendedor. Eso es lo que este sitio evita.
 
-Lo que cambia entre branches:
+No es una lista de features pendientes: los legales, el schema.org y la
+analítica están escritos sobre ese hecho. Agregar un solo botón de contacto
+obliga a revisar los tres, no solo el botón —y rompe el trato con los
+vendedores, que es lo más caro de los dos.
 
-- `index.html` — el `<a class="nav-cta">` del header, el bloque `<div class="wa-wrap">` flotante,
-  el script de tracking del click de WhatsApp (Meta Pixel `Contact` + evento GA4
-  `whatsapp_click`), la `<section class="panel newsletter">` y su item en el `.menu`.
-- `css/styles.css` — las reglas `.nav-cta`, el bloque `/* WHATSAPP BTN */` y el bloque
-  `/* NEWSLETTER */`.
-- `js/app.js` — el handler de suscripción (`#nlForm`) y el mapeo de nav del panel newsletter.
+El único enlace que saca al visitante del sitio es el de referidos, en la home.
+No expone ningún teléfono nuestro (manda al `wa.me` sin número, que abre el
+WhatsApp del propio visitante), pero si se registra deja su contacto y la
+empresa lo llama. Se decidió dejarlo; si alguna vez hay que cerrar esa puerta,
+se borra la sección 5 de `src/pages/LandingPage.tsx`.
 
-## Cómo trabajar con las dos
+## Qué se sacó respecto de `../tienda`
 
-Hacé los cambios comunes (productos, precios, imágenes, estilos) en `main` y después pasalos
-a `oficial`:
+| Se fue | Estaba en |
+| --- | --- |
+| Carrito completo | `CartContext`, `CartDrawer`, botón del navbar, "Añadir" de la tarjeta y de la ficha |
+| Botones de WhatsApp | hero, ficha de producto, pie, cartel de catálogo caído, `/envios` |
+| Chat con el asistente | `ChatWidget`, `lib/chat.ts`, `VITE_CHAT_API` |
+| Página y formulario de contacto | `/contacto`, `api/leads.ts` |
+| Alta de newsletter | `NewsletterForm`, `api/newsletter.ts` |
+| Carpeta `/api` entera | también `vite-api-plugin.ts` y la dependencia de Supabase |
+| Teléfono, correo e Instagram | `data/site.ts`, pie, legales, pie del PDF, JSON-LD |
+| `trackWhatsAppClick` y `trackAddToCart` | `lib/analytics.ts` |
+
+La tienda sigue intacta en `../tienda`: esto es un proyecto aparte, no un
+reemplazo. Si un arreglo aplica a los dos, hay que hacerlo dos veces.
+
+## Qué quedó
+
+- **Catálogo** — 4 categorías (triciclos, motos eléctricas, motos de combustión,
+  energía solar), con filtro, orden por precio y ficha completa por modelo.
+- **Ficha en PDF** — se descarga desde la ficha del producto. El pie ya no lleva
+  teléfono ni correo: el PDF se reenvía y seguiría derivando consultas mucho
+  después de haberse bajado.
+- **Compartir** — Web Share en el celular, copiar enlace en escritorio.
+- **`/envios`** — cómo se entrega en Cuba y cuánto es el arancel de aduana. Los
+  teléfonos que figuran son de las sucursales de Aerovaradero, no nuestros.
+- **Referidos** — la home enlaza a `referidos.smilemotors.online`, que es una app
+  aparte. Es lo único que saca al visitante del sitio; si tampoco tiene que
+  estar, se borra la sección 5 de `LandingPage.tsx`.
+- **Analítica** — GA4 y Pixel de Meta, solo tráfico y fichas vistas. Sin evento
+  de conversión, porque no hay conversión posible.
+
+## De dónde salen los productos
+
+Del CRM, igual que la tienda: `VITE_CATALOG_API` →
+`admin/app/api/public/store`. **No hay copia local de respaldo**, a propósito:
+publicar un catálogo viejo cuando el CRM no contesta muestra precios ya
+corregidos y modelos dados de baja, sin que nada avise. Si la API falla, el
+sitio lo dice y ofrece reintentar (`CatalogUnavailable`).
+
+Precios, altas y bajas se editan en el admin y acá se ven solos. No hay nada que
+importar ni ningún archivo de productos que mantener.
+
+## Setup
 
 ```bash
-git checkout oficial
-git merge main
-git checkout main
+npm install
+npm run dev
 ```
 
-El merge no toca los elementos exclusivos de `oficial` (contacto y newsletter): viven solo
-ahí y no existen en `main`, así que se conservan solos.
+Queda en `http://localhost:3005` (la tienda usa el 3004, así que pueden correr
+las dos a la vez). Arranca sin `.env.local`: apunta al admin de producción por
+defecto.
 
-Si hay conflicto, es señal de que un cambio tocó justo esas líneas. El caso típico es el
-`?v=` de `css/styles.css` y `js/app.js`, que está pegado a los bloques exclusivos: se resuelve
-conservando el bloque de `oficial` y llevándole el `?v=` nuevo de `main`.
-
-> Importante: nunca borres en `main` algo que tenga que seguir viviendo en `oficial`. Si lo
-> hacés, el próximo merge se lo lleva. Lo que sea exclusivo de `oficial` tiene que ser un
-> **agregado** de esa branch, no una ausencia en `main`.
+`.env.local` (copiar de `.env.local.example`) sirve para dos cosas: apuntar el
+catálogo a un admin local y poner los IDs de analítica. Son todas `VITE_*`, o
+sea que van al navegador — **acá no hay ni puede haber secretos**, porque el
+proyecto no tiene funciones de servidor.
 
 ## Deploy (Vercel)
 
-Cada versión se publica como un proyecto de Vercel distinto, apuntando al mismo repo pero
-con distinta *Production Branch*:
+Proyecto nuevo apuntando a esta carpeta, con las variables de
+`.env.local.example`. El `vercel.json` ya redirige todas las rutas a
+`index.html` (es una SPA) y no hay funciones que desplegar.
 
-- Proyecto oficial → Production Branch `oficial` → dominio `smilemotors.online` (apex)
-- Proyecto del catálogo → Production Branch `main` → dominio `catalogo.smilemotors.online`
+**Ojo con el dominio.** `SITE.url` (en `src/data/site.ts`), el canonical y los
+`og:` de `index.html` están puestos en `catalogo.smilemotors.online`, que hoy
+sirve el catálogo estático viejo de `../catalogo-smile-motors`. Si este proyecto
+lo reemplaza, está bien; si va a convivir con él, hay que cambiar el dominio en
+esos dos archivos antes de publicar o los canonical van a apuntar al sitio
+equivocado.
 
-DNS del dominio está en Hostinger (`ns1/ns2.dns-parking.com`). Registros que necesita Vercel:
+## Pendientes
 
-| Tipo    | Nombre     | Valor                   |
-| ------- | ---------- | ----------------------- |
-| `A`     | `@`        | `216.150.1.1`           |
-| `CNAME` | `catalogo` | `cname.vercel-dns.com`  |
-
-> Nota: el archivo `_headers` usa sintaxis de Cloudflare Pages / Netlify y Vercel lo ignora.
-> `.htaccess` solo aplica en hosting Apache. En Vercel, las cabeceras de cache se configuran
-> con un `vercel.json`.
+- **Textos legales**: `/garantia`, `/terminos` y `/privacidad` se reescribieron
+  para este sitio (sin formulario, sin carrito, sin canal de contacto), pero
+  conviene que los revise alguien con criterio legal antes de publicar. En
+  particular, `/privacidad` no ofrece ninguna dirección para ejercer derechos
+  sobre los datos, porque el sitio no tiene ningún canal: si eso es un problema,
+  la solución es agregar un correo ahí, no reabrir el contacto en todo el sitio.
