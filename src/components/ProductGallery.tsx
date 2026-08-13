@@ -7,7 +7,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // detalles del tablero, el baúl, el motor). La portada la define el admin con
 // `is_primary` y acá siempre va primera.
 
-export const ProductGallery = ({ images, alt }: { images: string[]; alt: string }) => {
+interface ProductGalleryProps {
+  images: string[];
+  alt: string;
+  /** Marca la foto grande con el cartel de agotado. Ver `data/stock.ts`. */
+  agotado?: boolean;
+}
+
+export const ProductGallery = ({ images, alt, agotado = false }: ProductGalleryProps) => {
   // Sin duplicados: si la misma URL quedó cargada dos veces en el CRM, la
   // miniatura repetida parece un bug.
   const fotos = useMemo(() => [...new Set(images.filter(Boolean))], [images]);
@@ -53,6 +60,27 @@ export const ProductGallery = ({ images, alt }: { images: string[]; alt: string 
             className="max-h-full w-full object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.22)]"
           />
         </div>
+
+        {/* El cartel va sobre la foto grande, igual que en la tarjeta del
+            catálogo, para que la ficha diga lo mismo que la grilla de la que se
+            llegó. Las miniaturas quedan limpias: repetir la cinta seis veces no
+            informa más y tapa el detalle que la miniatura existe para mostrar.
+
+            No bloquea el clic para que las flechas de abajo sigan andando. */}
+        {agotado && (
+          <div
+            className="pointer-events-none absolute inset-0 flex items-center justify-center p-6"
+            aria-hidden="true"
+          >
+            <div className="absolute inset-0 bg-white/55" />
+            <img
+              src="/images/sin-stock.webp"
+              alt=""
+              decoding="async"
+              className="relative w-full select-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.45)]"
+            />
+          </div>
+        )}
 
         {total > 1 && (
           <>

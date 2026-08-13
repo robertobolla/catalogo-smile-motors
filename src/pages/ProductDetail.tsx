@@ -15,6 +15,7 @@ import { useSEO } from '../hooks/useSEO';
 import { formatPrice } from '../lib/format';
 import { SITE } from '../data/site';
 import { customsDuty } from '../data/tariffs';
+import { sinStock } from '../data/stock';
 import { trackViewItem } from '../lib/analytics';
 import { ProductCard } from '../components/ProductCard';
 import { CatalogUnavailable } from '../components/CatalogUnavailable';
@@ -34,6 +35,8 @@ export const ProductDetail = () => {
     [product, products],
   );
   const [color, setColor] = useState<ProductColor | undefined>();
+
+  const agotado = product ? sinStock(product) : false;
 
   /** `null` = no lo sabemos (equipos solares), distinto de 0 = no paga. */
   const duty = product ? customsDuty(product) : null;
@@ -119,12 +122,18 @@ export const ProductDetail = () => {
               '@type': 'Offer',
               price: product.price,
               priceCurrency: 'USD',
-              availability: 'https://schema.org/InStock',
+              // Google muestra la disponibilidad en el resultado de búsqueda:
+              // dejar `InStock` en un modelo agotado manda gente a una ficha
+              // que no puede comprar, y es justo el dato que Merchant Center
+              // marca como desajustado con lo que dice la página.
+              availability: agotado
+                ? 'https://schema.org/OutOfStock'
+                : 'https://schema.org/InStock',
               url: `${SITE.url}/producto/${product.id}`,
             },
           }
         : undefined,
-    [product],
+    [product, agotado],
   );
 
   useSEO({
@@ -210,7 +219,11 @@ export const ProductDetail = () => {
               estira la celda a lo alto de la fila y el sticky no tiene contra
               qué pegarse. */}
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <ProductGallery images={[product.image, ...(product.gallery ?? [])]} alt={product.name} />
+            <ProductGallery
+              images={[product.image, ...(product.gallery ?? [])]}
+              alt={product.name}
+              agotado={agotado}
+            />
 
             {/* Acciones secundarias: llevarse la ficha o pasársela a alguien.
                 Van acá abajo, colgando de las miniaturas, y no junto al botón de
@@ -264,6 +277,23 @@ export const ProductDetail = () => {
               </span>
               <span className="text-sm text-zinc-500">Envío a Cuba incluido</span>
             </div>
+
+            {/* El cartel de la foto es una imagen: sin este renglón, quien
+                navega con lector de pantalla llega al precio y no se entera de
+                que no hay unidades. Va pegado al precio porque es la misma
+                pregunta —¿cuánto sale y me lo puedo llevar?— y no al final de
+                la página, donde ya decidió.
+
+                No dice "escribinos" como en la tienda: este proyecto no ofrece
+                ningún canal de contacto a propósito (ver el encabezado de
+                `data/site.ts`), así que mandar a escribir sería mandar a la
+                nada. Se limita a decir el hecho. */}
+            {agotado && (
+              <p className="mb-6 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                <span className="font-head font-bold uppercase tracking-widest">Sin stock</span> — no
+                hay unidades de este modelo en este momento.
+              </p>
+            )}
 
             {/* El arancel va pegado al precio y no escondido abajo: es el único
                 importe que el comprador todavía va a tener que pagar, y verlo

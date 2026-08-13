@@ -4,6 +4,7 @@ import { motion, type Variants } from 'framer-motion';
 import type { Product } from '../types';
 import { ProductImage } from './ProductImage';
 import { formatPrice } from '../lib/format';
+import { sinStock } from '../data/stock';
 
 interface ProductCardProps {
   product: Product;
@@ -19,6 +20,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product, theme = 'dark', variants }: ProductCardProps) => {
   const light = theme === 'light';
+  const agotado = sinStock(product);
 
   return (
     <motion.article
@@ -61,6 +63,34 @@ export const ProductCard = ({ product, theme = 'dark', variants }: ProductCardPr
                 : 'drop-shadow-[0_15px_15px_rgba(0,0,0,0.6)]'
             }`}
           />
+
+          {/* El cartel de agotado va sobre la foto y no sobre la tarjeta
+              entera: el marco del arte es apaisado (16:9) y la tarjeta es
+              vertical, así que sobre la tarjeta quedaba flotando en el medio
+              sin alinear con nada. Encajado en la caja de la foto el marco casi
+              la calca y la cinta cruza el vehículo, que es lo que se quiere
+              decir. Va con `object-contain`: estirarlo para calzar exacto
+              deforma la cara y la inclinación de la cinta, y encima la caja
+              cambia de alto en `sm`, con lo que la deformación sería distinta
+              en cada pantalla.
+
+              No tapa el precio ni el nombre a propósito: sirven igual para
+              decidir volver cuando reponga. El velo apaga solo la foto.
+
+              El clic sigue llegando al enlace que cubre la tarjeta: el
+              contenedor de arriba es `pointer-events-none`. */}
+          {agotado && (
+            <div className="absolute inset-0 z-20 flex items-center justify-center" aria-hidden="true">
+              <div className={`absolute inset-0 ${light ? 'bg-white/55' : 'bg-ink/60'}`} />
+              <img
+                src="/images/sin-stock.webp"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                className="relative w-full select-none drop-shadow-[0_8px_20px_rgba(0,0,0,0.45)]"
+              />
+            </div>
+          )}
         </div>
 
         <div className="mb-2 flex items-center justify-between gap-3">
@@ -86,6 +116,11 @@ export const ProductCard = ({ product, theme = 'dark', variants }: ProductCardPr
           }`}
         >
           {product.name}
+          {/* Acá no hay botón de añadir que pueda apagarse y decirlo —se fue
+              con el carrito—, así que el único que anuncia el agotado es el
+              cartel, y es una imagen. Sin esto, quien navega con lector de
+              pantalla recorre la grilla sin enterarse. */}
+          {agotado && <span className="sr-only"> — sin stock</span>}
         </h3>
 
         <div className="mt-auto">
