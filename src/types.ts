@@ -1,4 +1,4 @@
-export type CategorySlug = 'triciclos' | 'motos-electricas' | 'combustion' | 'energia-solar';
+export type CategorySlug = 'triciclos' | 'motos-electricas' | 'e-bikes' | 'combustion' | 'energia-solar';
 
 export interface ProductColor {
   id: string;

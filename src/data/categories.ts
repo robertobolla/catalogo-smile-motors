@@ -9,6 +9,7 @@
 export const CATEGORIES = [
   { slug: 'triciclos', label: 'Triciclos', short: 'Triciclos' },
   { slug: 'motos-electricas', label: 'Motos Eléctricas', short: 'Eléctricas' },
+  { slug: 'e-bikes', label: 'E-Bikes', short: 'E-Bikes' },
   { slug: 'combustion', label: 'Motos de Combustión', short: 'Combustión' },
   { slug: 'energia-solar', label: 'Energía Solar', short: 'Solar' },
 ] as const;

@@ -52,7 +52,7 @@ export const CatalogPage = () => {
     title: `${title} | Smile Motors`,
     description: activeCategory
       ? `${activeCategory.label} de Smile Motors: precios en dólares y fichas técnicas, con envío a Cuba incluido.`
-      : 'Catálogo completo de Smile Motors: triciclos, motos eléctricas, motos de combustión y sistemas solares.',
+      : 'Catálogo completo de Smile Motors: triciclos, motos eléctricas, e-bikes, motos de combustión y sistemas solares.',
     path: activeCategory ? `/catalogo/${activeCategory.slug}` : '/catalogo',
   });
 
