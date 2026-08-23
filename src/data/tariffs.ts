@@ -34,6 +34,9 @@ export const customsDuty = (product: Product): number | null => {
       return CUSTOMS_DUTY.electrico;
     case 'e-bikes':
       return CUSTOMS_DUTY.electrico;
+    case 'dirt-bikes':
+      // Son las e-bikes de cross: eléctricas, no pagan.
+      return CUSTOMS_DUTY.electrico;
     case 'triciclos':
       return /h[ií]brid/i.test(product.name)
         ? CUSTOMS_DUTY.hibrido
