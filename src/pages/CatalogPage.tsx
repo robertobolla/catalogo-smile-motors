@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { SlidersHorizontal } from 'lucide-react';
+import { Search, SlidersHorizontal, X } from 'lucide-react';
 import { CATEGORIES } from '../data/categories';
 import { useCatalog } from '../context/CatalogContext';
 import { ProductCard } from '../components/ProductCard';
@@ -20,6 +20,13 @@ const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
+
+// "fenix" tiene que encontrar al "Fénix": se busca sin tildes y sin mayúsculas.
+const normalizar = (s: string) =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase();
 
 /**
  * Píldora de categoría. La activa va en amarillo de marca con texto casi negro:
@@ -44,6 +51,7 @@ export const CatalogPage = () => {
   const { category } = useParams<{ category?: string }>();
   const { products, loading, error } = useCatalog();
   const [sort, setSort] = useState<SortKey>('destacados');
+  const [busqueda, setBusqueda] = useState('');
 
   const activeCategory = CATEGORIES.find((c) => c.slug === category);
   const title = activeCategory ? activeCategory.label : 'Catálogo completo';
@@ -59,11 +67,15 @@ export const CatalogPage = () => {
   // El catálogo llega del CRM, pero el primer render ya tiene la copia local:
   // no hay pantalla de carga que esperar, la lista se refresca sola al llegar.
   const visible = useMemo(() => {
-    const list = category ? products.filter((p) => p.category === category) : products;
+    let list = category ? products.filter((p) => p.category === category) : products;
+    // La búsqueda filtra DENTRO de la categoría activa: parado en "Triciclos",
+    // buscar "tank" no tiene por qué traer la moto Tank de eléctricas.
+    const q = normalizar(busqueda.trim());
+    if (q) list = list.filter((p) => normalizar(p.name).includes(q));
     if (sort === 'precio-asc') return [...list].sort((a, b) => a.price - b.price);
     if (sort === 'precio-desc') return [...list].sort((a, b) => b.price - a.price);
     return list;
-  }, [category, sort, products]);
+  }, [category, sort, products, busqueda]);
 
   return (
     // Banda clara: esta página es solo producto, y sobre blanco las fotos
@@ -135,8 +147,42 @@ export const CatalogPage = () => {
               en chico. El `order` es solo para el mobile: de `sm` para arriba
               la barra vuelve a ser una fila y manda el orden del DOM, que deja
               las píldoras a la izquierda y el orden a la derecha. */}
+          {/* Búsqueda y orden comparten el renglón de arriba en el celular
+              (input flex-1 + select chico = una sola fila, la barra no crece)
+              y van a la derecha de las píldoras en desktop. Mismo lenguaje que
+              el orden: borde amarillo cuando hay algo escrito. */}
           {products.length > 0 && (
-            <div className="order-first flex shrink-0 items-center gap-1.5 sm:order-none sm:gap-2 sm:pb-1">
+            <div className="order-first flex min-w-0 flex-1 items-center gap-1.5 sm:order-none sm:flex-none sm:gap-2 sm:pb-1">
+              <div className="relative min-w-0 flex-1 sm:w-44 sm:flex-none lg:w-56">
+                <Search
+                  className={`pointer-events-none absolute left-2 top-1/2 h-3.5 w-3.5 -translate-y-1/2 sm:left-3 sm:h-4 sm:w-4 ${busqueda ? 'text-brand-ink' : 'text-zinc-400'}`}
+                  aria-hidden="true"
+                />
+                <label htmlFor="buscar" className="sr-only">
+                  Buscar por nombre
+                </label>
+                <input
+                  id="buscar"
+                  type="text"
+                  value={busqueda}
+                  onChange={(e) => setBusqueda(e.target.value)}
+                  placeholder="Buscar modelo…"
+                  autoComplete="off"
+                  className={`w-full rounded-lg border py-1 pl-7 pr-6 font-head text-[10px] font-bold uppercase tracking-wide text-zinc-900 outline-none transition-colors placeholder:font-sans placeholder:text-[11px] placeholder:font-normal placeholder:normal-case placeholder:tracking-normal placeholder:text-zinc-400 focus:border-brand sm:rounded-xl sm:py-2.5 sm:pl-9 sm:pr-8 sm:text-xs sm:tracking-widest sm:placeholder:text-sm ${
+                    busqueda ? 'border-brand bg-brand/10' : 'border-zinc-200 bg-white'
+                  }`}
+                />
+                {busqueda && (
+                  <button
+                    type="button"
+                    onClick={() => setBusqueda('')}
+                    aria-label="Limpiar búsqueda"
+                    className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded p-0.5 text-zinc-500 hover:text-zinc-900 sm:right-2"
+                  >
+                    <X className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                  </button>
+                )}
+              </div>
               <SlidersHorizontal
                 className={`h-3.5 w-3.5 shrink-0 transition-colors sm:h-4 sm:w-4 ${sort === 'destacados' ? 'text-zinc-400' : 'text-brand-ink'}`}
               />
@@ -171,13 +217,28 @@ export const CatalogPage = () => {
         ) : error ? (
           <CatalogUnavailable />
         ) : visible.length === 0 ? (
-          <p className="py-20 text-center text-zinc-500">
-            No hay modelos en esta categoría por ahora.{' '}
-            <Link to="/catalogo" className="text-brand-ink hover:underline">
-              Ver todo el catálogo
-            </Link>
-            .
-          </p>
+          busqueda.trim() ? (
+            <p className="py-20 text-center text-zinc-500">
+              No encontramos modelos para «{busqueda.trim()}»
+              {activeCategory ? ` en ${activeCategory.label}` : ''}.{' '}
+              <button
+                type="button"
+                onClick={() => setBusqueda('')}
+                className="text-brand-ink hover:underline"
+              >
+                Limpiar búsqueda
+              </button>
+              .
+            </p>
+          ) : (
+            <p className="py-20 text-center text-zinc-500">
+              No hay modelos en esta categoría por ahora.{' '}
+              <Link to="/catalogo" className="text-brand-ink hover:underline">
+                Ver todo el catálogo
+              </Link>
+              .
+            </p>
+          )
         ) : (
           <motion.div
             initial="hidden"
