@@ -14,7 +14,12 @@ import type { Product } from '../types';
  * el mismo endpoint, así que cuando cambie el stock hay que tocar los dos —o
  * mejor, agregar el campo en el CRM y que esta lista deje de hacer falta.
  */
-const AGOTADOS = new Set(['cuatriciclo-ciber-250cc', 'xmox-rr', 'xmox-gp']);
+const AGOTADOS = new Set([
+  'cuatriciclo-ciber-250cc',
+  'xmox-rr',
+  'xmox-gp',
+  'dg-gray-hibrido-72v-105ah',
+]);
 
 /**
  * El dato del CRM manda cuando existe: el día que el endpoint empiece a mandar
