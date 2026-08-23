@@ -105,12 +105,11 @@ export const CatalogPage = () => {
           </p>
         </header>
 
-        {/* Categorías y orden comparten renglón: el filtro va a la derecha, en
-            el hueco que dejaban las píldoras, en vez de gastar una fila entera.
-            También en el celular, aunque ahí las píldoras queden en ~200px y
-            haya que scrollearlas: apiladas, la barra fija medía 136px y con el
-            navbar se comía un cuarto de la pantalla, tapando más de lo que
-            resolvía. Una barra fija tiene que ser baja antes que completa.
+        {/* Dos renglones: las píldoras arriba, búsqueda y orden abajo. Con
+            siete categorías compartir renglón dejaba a "Energía Solar" cortada
+            detrás del buscador en escritorio. En el celular el orden se
+            invierte (búsqueda y orden primero, `order-first`), que era el
+            diseño original de esa barra: baja antes que completa.
 
             Se pega bajo el navbar al scrollear: en un catálogo de 58 modelos,
             volver arriba para cambiar de categoría es el gesto que más se
@@ -118,9 +117,9 @@ export const CatalogPage = () => {
             del navbar (z-50) y del menú mobile (z-40), y por encima de las
             tarjetas. El `-mx-6` compensa el padding de la página para que el
             fondo tape de borde a borde y las fotos no asomen por los costados. */}
-        <div className="sticky top-16 z-30 -mx-6 mb-8 flex flex-col gap-1 border-b border-zinc-200/70 bg-zinc-50/90 px-6 pb-3 pt-1.5 backdrop-blur-md sm:flex-row sm:items-center sm:gap-3 sm:py-4">
+        <div className="sticky top-16 z-30 -mx-6 mb-8 flex flex-col gap-1 border-b border-zinc-200/70 bg-zinc-50/90 px-6 pb-3 pt-1.5 backdrop-blur-md sm:gap-2.5 sm:py-4">
           <nav
-            className="no-scrollbar flex min-w-0 flex-wrap gap-1 sm:flex-1 sm:flex-nowrap sm:gap-2 sm:overflow-x-auto sm:pb-1"
+            className="no-scrollbar flex min-w-0 flex-wrap gap-1 sm:flex-nowrap sm:gap-2 sm:overflow-x-auto"
             aria-label="Categorías"
           >
             <Link to="/catalogo" aria-current={!category ? 'page' : undefined} className={pillClass(!category)}>
@@ -147,12 +146,12 @@ export const CatalogPage = () => {
               en chico. El `order` es solo para el mobile: de `sm` para arriba
               la barra vuelve a ser una fila y manda el orden del DOM, que deja
               las píldoras a la izquierda y el orden a la derecha. */}
-          {/* Búsqueda y orden comparten el renglón de arriba en el celular
-              (input flex-1 + select chico = una sola fila, la barra no crece)
-              y van a la derecha de las píldoras en desktop. Mismo lenguaje que
-              el orden: borde amarillo cuando hay algo escrito. */}
+          {/* Búsqueda y orden: renglón propio, arriba de las píldoras en el
+              celular (input flex-1 + select chico = una sola fila) y debajo en
+              escritorio. Mismo lenguaje que las píldoras: borde amarillo
+              cuando hay algo escrito. */}
           {products.length > 0 && (
-            <div className="order-first flex min-w-0 flex-1 items-center gap-1.5 sm:order-none sm:flex-none sm:gap-2 sm:pb-1">
+            <div className="order-first flex min-w-0 flex-1 items-center gap-1.5 sm:order-none sm:flex-none sm:gap-2">
               <div className="relative min-w-0 flex-1 sm:w-44 sm:flex-none lg:w-56">
                 <Search
                   className={`pointer-events-none absolute left-2 top-1/2 h-3.5 w-3.5 -translate-y-1/2 sm:left-3 sm:h-4 sm:w-4 ${busqueda ? 'text-brand-ink' : 'text-zinc-400'}`}
