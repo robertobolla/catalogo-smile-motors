@@ -35,6 +35,12 @@ const stagger = {
  * Cuántos modelos entran en "Modelos destacados". Tres, que es una fila entera
  * de la grilla de 3 columnas: con cuatro quedaría uno solo colgando abajo.
  */
+// Hasta diez el rótulo va en palabras; de ahí en más, el número a secas.
+const LINEAS: Record<number, string> = {
+  2: 'Dos', 3: 'Tres', 4: 'Cuatro', 5: 'Cinco', 6: 'Seis', 7: 'Siete',
+  8: 'Ocho', 9: 'Nueve', 10: 'Diez',
+};
+
 const DESTACADOS = 3;
 
 /** Una foto representativa por categoría, para las tarjetas del índice. */
@@ -67,8 +73,8 @@ export const LandingPage = () => {
   // sigue acá en vez de reemplazarse: es lo que sostiene la sección el día que
   // se destilda todo.
   //
-  // OJO: sola nunca llega a energía solar. Las líneas son cuatro y los lugares
-  // tres, así que la última se queda afuera salvo que se la marque a mano —que
+  // OJO: sola nunca llega a las últimas líneas: hay más líneas que lugares
+  // (tres), así que las del fondo quedan afuera salvo que se la marque a mano —que
   // es justamente el agujero que vino a tapar el flag.
   const marcadosIds = new Set(marcados.map((p) => p.id));
   const automaticos = CATEGORIES.flatMap((c) =>
@@ -222,7 +228,7 @@ export const LandingPage = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <span className="mb-3 block font-head text-xs font-bold uppercase tracking-[0.35em] text-brand">
-              Cuatro líneas
+              {LINEAS[CATEGORIES.length] ?? CATEGORIES.length} líneas
             </span>
             <h2 className="title-display text-4xl text-white lg:text-5xl">Elegí por dónde empezar</h2>
           </div>
@@ -232,7 +238,7 @@ export const LandingPage = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
             variants={stagger}
-            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
           >
             {CATEGORIES.map((cat, i) => (
               <motion.div key={cat.slug} variants={fadeInUp}>
@@ -243,7 +249,7 @@ export const LandingPage = () => {
                   <span className="title-display mb-3 text-3xl text-brand/30 transition-colors group-hover:text-brand">
                     0{i + 1}
                   </span>
-                  <div className="product-halo relative mb-4 flex h-32 items-center justify-center">
+                  <div className="product-halo relative mb-4 flex h-32 items-center justify-center lg:h-44">
                     <img
                       src={categoryImage(products, cat.slug)}
                       alt=""
@@ -276,7 +282,7 @@ export const LandingPage = () => {
           <div className="mx-auto max-w-7xl">
             <div className="mb-12 text-center">
               <span className="mb-3 block font-head text-xs font-bold uppercase tracking-[0.35em] text-brand-ink">
-                Una vuelta por las cuatro líneas
+                Una vuelta por todas las líneas
               </span>
               <h2 className="title-display text-4xl text-zinc-900 lg:text-5xl">Catálogo</h2>
             </div>
