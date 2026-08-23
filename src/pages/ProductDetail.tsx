@@ -304,8 +304,8 @@ export const ProductDetail = () => {
                 <>Los aranceles de aduana no están incluidos en el precio y se pagan aparte.</>
               ) : duty === 0 ? (
                 <>
-                  <span className="font-semibold text-brand-ink">Sin arancel de aduana:</span> los
-                  eléctricos no pagan.
+                  <span className="font-semibold text-brand-ink">Sin arancel de aduana:</span> este
+                  producto no paga.
                 </>
               ) : (
                 <>

@@ -16,9 +16,10 @@ export const CUSTOMS_DUTY = {
 /**
  * Cuánto paga de arancel un producto, o `null` cuando no lo sabemos.
  *
- * `null` no es cero: es "no lo tenemos confirmado". Los equipos solares no son
- * vehículos y no entran en esta tabla, así que la UI muestra para ellos un
- * texto genérico en vez de un número inventado.
+ * `null` no es cero: es "no lo tenemos confirmado", y la UI muestra un texto
+ * genérico en vez de un número inventado. Hoy ninguna categoría lo usa: los
+ * equipos solares pagan $0 (confirmado 2026-08-23), pero el contrato queda por
+ * si entra una categoría sin dato.
  *
  * OJO con los triciclos: la categoría mezcla eléctricos e híbridos, que pagan
  * distinto. Mientras no exista un campo de tipo de motor en el producto, el
@@ -38,6 +39,7 @@ export const customsDuty = (product: Product): number | null => {
         ? CUSTOMS_DUTY.hibrido
         : CUSTOMS_DUTY.electrico;
     case 'energia-solar':
-      return null;
+      // Confirmado por el usuario (2026-08-23): los equipos solares no pagan.
+      return CUSTOMS_DUTY.electrico;
   }
 };

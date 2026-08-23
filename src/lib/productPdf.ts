@@ -228,7 +228,7 @@ export const descargarFichaPdf = async (product: Product): Promise<void> => {
     arancel === null
       ? 'Aranceles de aduana no incluidos: consultanos.'
       : arancel === 0
-        ? 'Sin arancel de aduana: los eléctricos no pagan.'
+        ? 'Sin arancel de aduana: este producto no paga.'
         : `No incluye el arancel de aduana: ${formatPrice(arancel)} aparte.`,
     MARGEN + 64,
     y + 11.5,
