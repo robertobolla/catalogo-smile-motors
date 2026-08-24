@@ -89,8 +89,9 @@ proyecto no tiene funciones de servidor.
 ## Deploy (Vercel)
 
 Proyecto nuevo apuntando a esta carpeta, con las variables de
-`.env.local.example`. El `vercel.json` ya redirige todas las rutas a
-`index.html` (es una SPA) y no hay funciones que desplegar.
+`.env.local.example`. El `vercel.json` redirige `/producto/:slug` a
+`api/og.ts` (reescribe los meta para las vistas previas de WhatsApp/Facebook;
+no usa secretos, lee el endpoint público del CRM) y el resto a `index.html`.
 
 **Ojo con el dominio.** `SITE.url` (en `src/data/site.ts`), el canonical y los
 `og:` de `index.html` están puestos en `catalogo.smilemotors.online`, que hoy

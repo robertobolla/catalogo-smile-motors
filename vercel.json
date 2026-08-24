@@ -4,6 +4,10 @@
       "handle": "filesystem"
     },
     {
+      "src": "/producto/([^/]+)",
+      "dest": "/api/og?slug=$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
