@@ -38,7 +38,7 @@ export const ProductDetail = () => {
 
   const agotado = product ? sinStock(product) : false;
 
-  /** `null` = no lo sabemos (equipos solares), distinto de 0 = no paga. */
+  /** `null` = paga pero no mostramos monto (híbridos), distinto de 0 = no paga. */
   const duty = product ? customsDuty(product) : null;
 
   const [generandoPdf, setGenerandoPdf] = useState(false);
@@ -301,7 +301,7 @@ export const ProductDetail = () => {
                 queremos evitar. */}
             <p className="mb-6 text-sm text-zinc-500">
               {duty === null ? (
-                <>Los aranceles de aduana no están incluidos en el precio y se pagan aparte.</>
+                <>No incluye aranceles de aduana.</>
               ) : duty === 0 ? (
                 <>
                   <span className="font-semibold text-brand-ink">Sin arancel de aduana:</span> este

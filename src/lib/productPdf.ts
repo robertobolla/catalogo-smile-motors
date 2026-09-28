@@ -226,7 +226,7 @@ export const descargarFichaPdf = async (product: Product): Promise<void> => {
   doc.setTextColor(COLOR.suave);
   doc.text(
     arancel === null
-      ? 'Aranceles de aduana no incluidos: consultanos.'
+      ? 'No incluye aranceles de aduana.'
       : arancel === 0
         ? 'Sin arancel de aduana: este producto no paga.'
         : `No incluye el arancel de aduana: ${formatPrice(arancel)} aparte.`,

@@ -9,17 +9,20 @@ import type { Product } from '../types';
  */
 export const CUSTOMS_DUTY = {
   combustion: 265,
-  hibrido: 165,
+  // Híbridos: el arancel existe y lo paga el cliente en la aduana, pero
+  // nosotros no lo cobramos, así que no mostramos monto. `null` hace que la web
+  // diga "No incluye aranceles de aduana" (decisión del negocio, 2026-09-28).
+  hibrido: null,
   electrico: 0,
 } as const;
 
 /**
  * Cuánto paga de arancel un producto, o `null` cuando no lo sabemos.
  *
- * `null` no es cero: es "no lo tenemos confirmado", y la UI muestra un texto
- * genérico en vez de un número inventado. Hoy ninguna categoría lo usa: los
- * equipos solares pagan $0 (confirmado 2026-08-23), pero el contrato queda por
- * si entra una categoría sin dato.
+ * `null` no es cero: es "paga arancel, pero no mostramos monto", y la UI dice
+ * "No incluye aranceles de aduana". Hoy lo usan los híbridos (lo pagan en la
+ * aduana y nosotros no lo cobramos). Los equipos solares pagan $0 (confirmado
+ * 2026-08-23).
  *
  * OJO con los triciclos: la categoría mezcla eléctricos e híbridos, que pagan
  * distinto. Mientras no exista un campo de tipo de motor en el producto, el

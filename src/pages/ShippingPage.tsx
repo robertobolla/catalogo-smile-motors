@@ -160,7 +160,7 @@ export function ShippingPage() {
           </h2>
           <p className="mb-6 leading-relaxed text-zinc-400">
             Los aranceles de aduana <strong className="text-white">no están incluidos</strong> en el
-            precio de los modelos y se pagan aparte. El monto es fijo según el tipo de vehículo:
+            precio de los modelos y se pagan aparte. Según el tipo de vehículo:
           </p>
           <ul className="divide-y divide-white/5 rounded-3xl border border-white/8">
             {[
@@ -171,7 +171,11 @@ export function ShippingPage() {
               <li key={row.label} className="flex flex-wrap items-baseline justify-between gap-2 px-6 py-5">
                 <span className="font-head text-base font-bold uppercase tracking-wide">{row.label}</span>
                 <span className={`title-display text-xl ${row.amount === 0 ? 'text-brand' : 'text-white'}`}>
-                  {row.amount === 0 ? 'No pagan' : formatPrice(row.amount)}
+                  {row.amount === 0
+                    ? 'No pagan'
+                    : row.amount === null
+                      ? 'No incluido'
+                      : formatPrice(row.amount)}
                 </span>
               </li>
             ))}
