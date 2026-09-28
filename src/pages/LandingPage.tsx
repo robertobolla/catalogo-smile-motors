@@ -443,7 +443,7 @@ export const LandingPage = () => {
             {
               icon: Tag,
               title: 'Precio con el flete incluido',
-              desc: 'El envío hasta Cuba ya está en el precio: no se suma al despachar ni al entregar. Aparte va el arancel de aduana, que sabés de antemano: US$ 265 en combustión, US$ 165 en híbridos y nada en eléctricos.',
+              desc: 'El envío hasta Cuba ya está en el precio: no se suma al despachar ni al entregar. Aparte va el arancel de aduana, que sabés de antemano: US$ 265 en combustión y nada en eléctricos. Los híbridos no incluyen aranceles de aduana.',
             },
           ].map((item) => (
             <motion.div key={item.title} variants={fadeInUp} className="border-t border-zinc-200 pt-7">
