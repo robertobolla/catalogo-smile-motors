@@ -33,8 +33,10 @@ export function TermsOfService() {
         aviso previo.
       </p>
       <p>
-        Los precios <strong>no incluyen los aranceles de aduana</strong>, que se pagan aparte y
-        dependen del tipo de vehículo. Los montos vigentes están publicados en{' '}
+        Los precios <strong>no incluyen los aranceles de aduana</strong>, que dependen del tipo de
+        vehículo. En los vehículos de combustión el arancel se paga junto con la compra, porque
+        tiene que ir pagado desde la salida del envío; los híbridos no incluyen aranceles de
+        aduana. Los montos vigentes están publicados en{' '}
         <Link to="/envios">Envíos y entregas</Link> y se informan también en la ficha de cada
         modelo. Al ser un tributo fijado por la autoridad aduanera, puede cambiar sin que dependa de
         nosotros.

@@ -2,10 +2,13 @@
  * Cómo se entrega según el vehículo, y dónde están las sucursales de
  * Aerovaradero.
  *
- * No todo llega a la puerta: los eléctricos y los equipos solares sí, pero los
- * híbridos y los de combustión se retiran en una sucursal. La tienda lo decía
+ * No todo llega a la puerta: los eléctricos, los de combustión y los equipos
+ * solares sí, pero los híbridos se retiran en una sucursal. La tienda lo decía
  * como si fuera un solo caso —"entrega en La Habana o en la provincia"— y el
- * comprador de una moto de combustión se enteraba después.
+ * comprador de un híbrido se enteraba después.
+ *
+ * Hasta el 2026-09-29 decía que los de combustión también se retiraban: estaba
+ * mal. Van a domicilio igual que los eléctricos.
  *
  * Los datos salen de la base de conocimiento del bot
  * (admin/scripts/fusionar_faqs_entrega_bot.mjs). Si allá cambian, hay que
@@ -18,14 +21,14 @@ export const DELIVERY_MODES = [
   {
     id: 'domicilio',
     label: 'Hasta la puerta de la casa',
-    applies: 'Eléctricos y energía solar',
+    applies: 'Eléctricos, combustión y energía solar',
     detail:
       'Entregamos en el domicilio del receptor, tanto en La Habana como en cualquier provincia.',
   },
   {
     id: 'aerovaradero',
     label: 'Retiro en Aerovaradero',
-    applies: 'Híbridos y combustión',
+    applies: 'Híbridos',
     detail:
       'No llegan al domicilio: el receptor los retira en la sucursal de Aerovaradero que elija, presentando su carné de identidad.',
   },

@@ -309,8 +309,9 @@ export const ProductDetail = () => {
                 </>
               ) : (
                 <>
-                  No incluye el arancel de aduana:{' '}
-                  <span className="font-semibold text-zinc-900">{formatPrice(duty)}</span> aparte.
+                  Arancel de aduana aparte:{' '}
+                  <span className="font-semibold text-zinc-900">{formatPrice(duty)}</span>, que se
+                  paga junto con la compra.
                 </>
               )}
             </p>

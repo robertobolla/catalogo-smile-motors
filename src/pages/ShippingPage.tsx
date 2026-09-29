@@ -20,7 +20,7 @@ const STEPS = [
   {
     icon: MapPin,
     title: 'Entrega al receptor',
-    desc: 'Los eléctricos y los solares llegan al domicilio; los híbridos y de combustión se retiran en Aerovaradero. Siempre con el carné del receptor.',
+    desc: 'Los eléctricos, los de combustión y los solares llegan al domicilio; los híbridos se retiran en Aerovaradero. Siempre con el carné del receptor.',
   },
 ];
 
@@ -28,7 +28,7 @@ export function ShippingPage() {
   useSEO({
     title: 'Envíos y entregas | Smile Motors',
     description:
-      'Cómo enviamos a Cuba con el flete incluido: los eléctricos y solares llegan al domicilio y los híbridos y de combustión se retiran en Aerovaradero. Sucursales, aranceles y seguimiento.',
+      'Cómo enviamos a Cuba con el flete incluido: los eléctricos, de combustión y solares llegan al domicilio y los híbridos se retiran en Aerovaradero. Sucursales, aranceles y seguimiento.',
     path: '/envios',
   });
 
@@ -65,8 +65,8 @@ export function ShippingPage() {
 
         {/* La forma de entrega depende del vehículo, y antes esta página lo
             contaba como si fuera una sola: "La Habana / resto de Cuba". Quien
-            compraba una moto de combustión se enteraba después de que tenía que
-            ir a buscarla. Los dos casos van uno al lado del otro, con el tipo
+            compraba un híbrido se enteraba después de que tenía que ir a
+            buscarlo. Los dos casos van uno al lado del otro, con el tipo
             de vehículo como primera línea de cada tarjeta. */}
         <section className="mb-14">
           <h2 className="mb-2 font-head text-sm font-bold uppercase tracking-[0.25em] text-brand">
@@ -107,7 +107,7 @@ export function ShippingPage() {
             Sucursales de Aerovaradero
           </h2>
           <p className="mb-6 leading-relaxed text-zinc-400">
-            Solo para <strong className="text-white">híbridos y vehículos de combustión</strong>. El
+            Solo para <strong className="text-white">vehículos híbridos</strong>. El
             receptor retira en la sucursal que ustedes elijan —no tiene que ser la de su provincia—
             presentando su carné de identidad. La sucursal definitiva queda asentada en el contrato.
           </p>
@@ -160,7 +160,9 @@ export function ShippingPage() {
           </h2>
           <p className="mb-6 leading-relaxed text-zinc-400">
             Los aranceles de aduana <strong className="text-white">no están incluidos</strong> en el
-            precio de los modelos y se pagan aparte. Según el tipo de vehículo:
+            precio de los modelos. En los vehículos de combustión los cobramos nosotros junto con
+            la compra, porque tienen que ir pagados desde la salida. Los híbridos no incluyen
+            aranceles de aduana. Según el tipo de vehículo:
           </p>
           <ul className="divide-y divide-white/5 rounded-3xl border border-white/8">
             {[
