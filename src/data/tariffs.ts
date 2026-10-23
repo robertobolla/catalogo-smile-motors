@@ -41,6 +41,12 @@ export const customsDuty = (product: Product): number | null => {
       // Son las e-bikes de cross: eléctricas, no pagan.
       return CUSTOMS_DUTY.electrico;
     case 'triciclos':
+      // El tipo de motor del CRM manda: es lo que después cobra la venta (un
+      // triciclo a combustión paga como cualquier vehículo a combustión). Sin él,
+      // con un CRM que todavía no lo manda, se adivina como antes.
+      if (product.motor === 'combustion') return CUSTOMS_DUTY.combustion;
+      if (product.motor === 'hibrido') return CUSTOMS_DUTY.hibrido;
+      if (product.motor === 'electrico') return CUSTOMS_DUTY.electrico;
       return /h[ií]brid/i.test(product.name)
         ? CUSTOMS_DUTY.hibrido
         : CUSTOMS_DUTY.electrico;
