@@ -39,6 +39,11 @@ export interface Product {
   featured?: boolean;
   /** Unidades disponibles. Viene de /api/products; el catálogo local no lo trae. */
   stock?: number;
+  /**
+   * Tipo de motor según la categoría del CRM. Decide el arancel de los
+   * triciclos, que mezclan los tres (ver data/tariffs).
+   */
+  motor?: 'combustion' | 'hibrido' | 'electrico';
   isActive?: boolean;
 }
 
